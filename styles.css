@@ -71,7 +71,12 @@ body {
 /* =====================
    Typography
    ===================== */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 600;
     line-height: 1.2;
@@ -168,6 +173,15 @@ section {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-image {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
 }
 
 .logo-text {
@@ -270,6 +284,16 @@ section {
     color: var(--text-primary);
     margin-bottom: 24px;
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.inline-logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    vertical-align: middle;
 }
 
 .hero-description {
@@ -336,6 +360,54 @@ section {
 /* Hero Visual */
 .hero-visual {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-image-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid var(--card-bg);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    z-index: 2;
+    animation: float 3s ease-in-out infinite;
+}
+
+.profile-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--accent-gradient);
+    filter: blur(40px);
+    opacity: 0.3;
+    z-index: 1;
+    animation: pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: scale(1.05);
+        opacity: 0.5;
+    }
 }
 
 .floating-card {
@@ -348,9 +420,12 @@ section {
 }
 
 @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-20px);
     }
@@ -361,6 +436,7 @@ section {
     font-size: 1rem;
     margin: 8px 0;
     color: var(--text-primary);
+    white-space: nowrap;
 }
 
 .code-indent {
@@ -416,10 +492,13 @@ section {
 }
 
 @keyframes scroll {
-    0%, 100% {
+
+    0%,
+    100% {
         top: 8px;
         opacity: 1;
     }
+
     50% {
         top: 20px;
         opacity: 0.5;
@@ -481,9 +560,42 @@ section {
 
 .about-highlights {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 32px;
     margin-top: 48px;
+}
+
+.code-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* highlight-item jaisa look */
+    padding: 24px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* IMPORTANT */
+    text-align: left;
+    /* ❌ center nahi hoga */
+}
+
+.code-visual:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-primary);
+}
+
+.code-visual .floating-card {
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    animation: none;
 }
 
 .highlight-item {
@@ -1038,7 +1150,7 @@ section {
     line-height: 1.6;
 }
 
-.contact-item p + p {
+.contact-item p+p {
     margin-top: 4px;
 }
 
@@ -1156,6 +1268,15 @@ section {
         padding: 60px 0;
     }
 
+    .profile-image-container {
+        width: 280px;
+        height: 280px;
+    }
+
+    .about-highlights {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .nav-menu {
         position: fixed;
         top: 70px;
@@ -1217,6 +1338,20 @@ section {
         padding: 0 16px;
     }
 
+    .profile-image-container {
+        width: 220px;
+        height: 220px;
+    }
+
+    .inline-logo {
+        width: 28px;
+        height: 28px;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+
     .hero-title {
         font-size: 2.5rem;
     }
@@ -1227,6 +1362,10 @@ section {
 
     .btn {
         width: 100%;
+    }
+
+    .about-highlights {
+        grid-template-columns: 1fr;
     }
 
     .about-highlights {
@@ -1246,6 +1385,7 @@ section {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1257,7 +1397,11 @@ section {
 }
 
 /* Smooth transitions for all interactive elements */
-button, a, input, textarea, select {
+button,
+a,
+input,
+textarea,
+select {
     transition: all 0.3s ease;
 }
 

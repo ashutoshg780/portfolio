@@ -81,36 +81,26 @@ portfolio/
 
 ---
 
-## 🚀 Quick Start - Deploy in 5 Minutes
+## 🚀 Quick Deployment
 
-### Method 1: GitHub Pages (Recommended)
+Want to deploy your portfolio? Check out our comprehensive deployment guide:
 
+📖 **[DEPLOYMENT.md](DEPLOYMENT.md)** - Complete step-by-step guide for GitHub Pages
+
+**TL;DR:**
 ```bash
-# 1. Create repository
-# Name: <your-username>.github.io
-
-# 2. Clone repository
-git clone https://github.com/<your-username>/<your-username>.github.io.git
-cd <your-username>.github.io
-
-# 3. Add portfolio files
-cp index.html styles.css script.js <repository-folder>/
-
-# 4. Push to GitHub
+git clone https://github.com/<username>/<username>.github.io.git
+cd <username>.github.io
+# Add your files
 git add .
 git commit -m "🚀 Deploy portfolio"
 git push origin main
-
-# 5. Enable GitHub Pages
-# Go to Settings → Pages → Select 'main' branch → Save
+# Enable Pages in Settings → Pages
 ```
 
-**✅ Live at:** `https://<your-username>.github.io`
-
-### Method 2: One-Click Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start)
-[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import)
+**Alternative Hosting:**
+- [![Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start)
+- [![Vercel](https://vercel.com/button)](https://vercel.com/import)
 
 ---
 
@@ -233,21 +223,6 @@ minify script.js > script.min.js
 | **Netlify** | ✅ Yes | ✅ Yes | ✅ Yes | ~2 min |
 | **Vercel** | ✅ Yes | ✅ Yes | ✅ Yes | ~2 min |
 | **Cloudflare Pages** | ✅ Yes | ✅ Yes | ✅ Yes | ~3 min |
-
----
-
-## ✅ Pre-Deployment Checklist
-
-- [ ] Update all personal information
-- [ ] Add your projects with descriptions  
-- [ ] Update skill levels
-- [ ] Add social media links
-- [ ] Replace placeholder email & phone
-- [ ] Test on mobile devices
-- [ ] Test dark/light mode toggle
-- [ ] Verify all links work
-- [ ] Check grammar and spelling
-- [ ] Setup contact form (optional)
 
 ---
 
@@ -584,19 +559,6 @@ If you don't want to use GitHub Pages:
    - Fast global CDN
    - Unlimited bandwidth
    - Built-in analytics
-
-## ✅ Pre-Deployment Checklist
-
-- [ ] Update all personal information
-- [ ] Add your projects with descriptions
-- [ ] Update skill levels
-- [ ] Add your social media links
-- [ ] Replace placeholder email
-- [ ] Test on mobile devices
-- [ ] Test dark/light mode toggle
-- [ ] Verify all links work
-- [ ] Check grammar and spelling
-- [ ] Test contact form (if integrated)
 
 ## 🐛 Common Issues & Fixes
 
