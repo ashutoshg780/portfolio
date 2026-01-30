@@ -177,45 +177,55 @@ const animateOnScroll = () => {
 window.addEventListener('load', animateOnScroll);
 
 // =====================
-// Contact Form Handling
+// Firebase Initialization
+// =====================
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+// =====================
+// Contact Form Handling with Firestore
 // =====================
 const contactForm = document.getElementById('contactForm');
 
-contactForm.addEventListener('submit', (e) => {
+contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        message: document.getElementById('message').value
-    };
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
     
-    // Here you would typically send the form data to a backend service
-    // For now, we'll just log it and show a success message
-    console.log('Form Data:', formData);
+    // Show loading
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
     
-    // Show success message
-    alert('Thank you for your message! I will get back to you soon.');
-    
-    // Reset form
-    contactForm.reset();
-    
-    // In production, you might want to use a service like:
-    // - EmailJS
-    // - Formspree
-    // - Your own backend API
-    // Example with EmailJS:
-    /*
-    emailjs.send('service_id', 'template_id', formData)
-        .then(() => {
-            alert('Message sent successfully!');
-            contactForm.reset();
-        })
-        .catch((error) => {
-            alert('Failed to send message. Please try again.');
-            console.error('Error:', error);
+    try {
+        // Save to Firestore
+        await db.collection('contact_forms').add({
+            name: document.getElementById('name').value,
+            phone: document.getElementById('phone').value,
+            email: document.getElementById('email').value,
+            message: document.getElementById('message').value,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
         });
-    */
+        
+        // Success state
+        submitBtn.textContent = 'Message Sent! ✓';
+        submitBtn.style.background = 'linear-gradient(135deg, #6750a4 0%, #7f67be 100%)';
+        contactForm.reset();
+        
+        // Reset button after 3 seconds
+        setTimeout(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.style.background = '';
+            submitBtn.disabled = false;
+        }, 3000);
+        
+    } catch (error) {
+        console.error('Firebase Error:', error);
+        alert('Failed to send message. Please try again.');
+        
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    }
 });
 
 // =====================
