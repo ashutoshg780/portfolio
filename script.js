@@ -395,3 +395,63 @@ function debounce(func, wait = 10) {
 // Apply debounce to scroll handlers
 window.addEventListener('scroll', debounce(setActiveNavLink, 10));
 window.addEventListener('scroll', debounce(handleNavbarScroll, 10));
+
+// Certificate Inline View - WITH CLOSE BUTTON
+
+// Get all certificate cards
+const certificateCards = document.querySelectorAll('.certificate-card');
+
+// Handle certificate card click
+certificateCards.forEach(card => {
+    card.addEventListener('click', function() {
+        const title = this.dataset.title;
+        const issuer = this.dataset.issuer;
+        const imagePath = this.dataset.image;
+        
+        // Get parent container
+        const container = this.closest('.certificates-grid-container');
+        const detailView = container.querySelector('.certificate-detail-view');
+        const detailTitle = detailView.querySelector('[id^="detailTitle"]');
+        const detailIssuer = detailView.querySelector('[id^="detailIssuer"]');
+        const detailImage = detailView.querySelector('[id^="detailImage"]');
+        
+        // Remove selected class from all cards in this container
+        container.querySelectorAll('.certificate-card').forEach(c => {
+            c.classList.remove('selected');
+        });
+        
+        // Add selected class to clicked card
+        this.classList.add('selected');
+        
+        // Update detail view
+        detailTitle.textContent = title;
+        detailIssuer.textContent = issuer;
+        detailImage.src = imagePath;
+        
+        // Switch to split view
+        container.classList.remove('normal-view');
+        detailView.classList.add('active');
+    });
+});
+
+// Handle close button clicks
+const closeButtons = document.querySelectorAll('.detail-close-btn');
+
+closeButtons.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        e.stopPropagation(); // Prevent event bubbling
+        
+        // Get parent container
+        const container = this.closest('.certificates-grid-container');
+        const detailView = container.querySelector('.certificate-detail-view');
+        
+        // Remove selected class from all cards
+        container.querySelectorAll('.certificate-card').forEach(c => {
+            c.classList.remove('selected');
+        });
+        
+        // Hide detail view and switch back to normal grid
+        detailView.classList.remove('active');
+        container.classList.add('normal-view');
+    });
+});

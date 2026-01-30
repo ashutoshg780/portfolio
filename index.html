@@ -23,6 +23,10 @@
 </head>
 
 <body>
+
+    
+
+
     <!-- Theme Toggle -->
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
         <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -515,7 +519,7 @@
                             <span>FCM</span>
                             <span>MVVM</span>
                         </div>
-                        <a href="abc.in" target="_blank" rel="noopener noreferrer" class="project-link">
+                        <a href="https://play.google.com/store/apps/details?id=com.developer.ev2z&hl=en-in" target="_blank" rel="noopener noreferrer" class="project-link">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                 fill="white">
                                 <path
@@ -565,7 +569,7 @@
                             <span>FCM</span>
                             <span>MVVM</span>
                         </div>
-                        <a href="abc.in" target="_blank" rel="noopener noreferrer" class="project-link">
+                        <a href="https://play.google.com/store/apps/details?id=com.fleeta2z.vehicle" target="_blank" rel="noopener noreferrer" class="project-link">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                 fill="white">
                                 <path
@@ -653,7 +657,7 @@
                             <span>MVVM</span>
                             <span>Firestore</span>
                         </div>
-                        <a href="abc.in" target="_blank" rel="noopener noreferrer" class="project-link">
+                        <a href="https://play.google.com/apps/testing/com.tgb.niharikaattendanceenrolment" target="_blank" rel="noopener noreferrer" class="project-link">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                 fill="white">
                                 <path
@@ -824,17 +828,12 @@
                 <!-- Web & Desktop Development Row -->
                 <!-- Web Development & Other Projects - Combined Row -->
                 <div class="tech-category">
-                    <div class="combined-category-header">
-                        <h4 class="tech-category-title">
-                            <span class="category-icon">🌐</span>
-                            Web Development
-                        </h4>
-                        <h4 class="tech-category-title">
-                            <span class="category-icon">🖥️</span>
-                            Desktop NetBeans Projects
-                            <span class="category-icon">        </span>
-                        </h4>
-                    </div>
+                    <h4 class="tech-category-title">
+                        <span class="category-icon">🌐</span>
+                        Web &
+                        <span class="category-icon">🖥️</span>
+                        Desktop NetBeans Projects
+                    </h4>
                     <div class="projects-grid">
                         <div class="project-card-small">
                             <h4>Nilkamal Furniture E-Commerce (Laravel)</h4>
@@ -872,35 +871,60 @@
         </div>
     </section>
 
-    <!-- Certificates Section -->
+
+    <!-- Certificates Section - WITH CLOSE BUTTON -->
     <section id="certificates" class="certificates">
         <div class="container">
             <h2 class="section-title">Certificates & Achievements</h2>
-            
+
             <!-- Google Cloud Arcade Achievements -->
             <div class="achievement-category">
                 <h3 class="achievement-category-title">
                     <span class="category-icon">☁️</span>
                     Google Cloud Arcade
                 </h3>
-                <div class="certificates-grid">
-                    <div class="certificate-card">
-                        <div class="certificate-icon">🏆</div>
-                        <h3 class="certificate-title">Arcade Trooper Tier</h3>
-                        <p class="certificate-issuer">Google Cloud</p>
-                        <p class="certificate-date">Jan - Jun 2025</p>
+                <div class="certificates-grid-container normal-view">
+                    <!-- Left Side - Certificate List -->
+                    <div class="certificates-list certificates-grid">
+                        <div class="certificate-card" data-image="images/certificate.jpg"
+                            data-title="Arcade Trooper Tier" data-issuer="Google Cloud">
+                            <div class="certificate-icon">🏆</div>
+                            <h3 class="certificate-title">Arcade Trooper Tier</h3>
+                            <p class="certificate-issuer">Google Cloud</p>
+                            <p class="certificate-date">Jan - Jun 2025</p>
+                        </div>
+                        <div class="certificate-card" data-image="images/Advanced.gif" data-title="Advanced Milestone"
+                            data-issuer="Google Cloud">
+                            <div class="certificate-icon">⭐</div>
+                            <h3 class="certificate-title">Advanced Milestone</h3>
+                            <p class="certificate-issuer">Google Cloud</p>
+                            <p class="certificate-date">July - Dec 2024</p>
+                        </div>
+                        <div class="certificate-card" data-image="images/Premium+.gif" data-title="Premium+ Milestone"
+                            data-issuer="Google Cloud">
+                            <div class="certificate-icon">💎</div>
+                            <h3 class="certificate-title">Premium+ Milestone</h3>
+                            <p class="certificate-issuer">Google Cloud</p>
+                            <p class="certificate-date">Jan - Jun 2024</p>
+                        </div>
                     </div>
-                    <div class="certificate-card">
-                        <div class="certificate-icon">⭐</div>
-                        <h3 class="certificate-title">Advanced Milestone</h3>
-                        <p class="certificate-issuer">Google Cloud</p>
-                        <p class="certificate-date">July - Dec 2024</p>
-                    </div>
-                    <div class="certificate-card">
-                        <div class="certificate-icon">💎</div>
-                        <h3 class="certificate-title">Premium+ Milestone</h3>
-                        <p class="certificate-issuer">Google Cloud</p>
-                        <p class="certificate-date">Jan - Jun 2024</p>
+
+                    <!-- Right Side - Certificate Detail View WITH CLOSE BUTTON -->
+                    <div class="certificate-detail-view">
+                        <button class="detail-close-btn" aria-label="Close">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                        <div class="detail-header">
+                            <h3 id="detailTitle">Certificate Title</h3>
+                            <p id="detailIssuer">Issuer</p>
+                        </div>
+                        <div class="detail-image">
+                            <img id="detailImage" src="" alt="Certificate">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -911,37 +935,67 @@
                     <span class="category-icon">📜</span>
                     Professional Certifications
                 </h3>
-                <div class="certificates-grid">
-                    <div class="certificate-card">
-                        <div class="certificate-icon">🤖</div>
-                        <h3 class="certificate-title">Android App Development with Kotlin</h3>
-                        <p class="certificate-issuer">GeeksforGeeks</p>
+                <div class="certificates-grid-container normal-view">
+                    <!-- Left Side - Certificate List -->
+                    <div class="certificates-list certificates-grid">
+                        <div class="certificate-card" data-image="images/Android_App Development_with_Kotlin.png"
+                            data-title="Android App Development with Kotlin" data-issuer="GeeksforGeeks">
+                            <div class="certificate-icon">
+                                <img src="images/android.svg" alt="Android" style="width: 40px; height: 40px;">
+                            </div>
+                            <h3 class="certificate-title">Android App Development with Kotlin</h3>
+                            <p class="certificate-issuer">GeeksforGeeks</p>
+                        </div>
+                        <div class="certificate-card" data-image="images/Data_Science using_Python.jpg"
+                            data-title="Data Science using Python" data-issuer="NIELIT Gorakhpur">
+                            <div class="certificate-icon">📊</div>
+                            <h3 class="certificate-title">Data Science using Python</h3>
+                            <p class="certificate-issuer">NIELIT Gorakhpur</p>
+                        </div>
+                        <div class="certificate-card" data-image="images/Cyber_Security_&_Ethical_Hacking.jpeg"
+                            data-title="Cyber Security & Ethical Hacking" data-issuer="NIELIT Haridwar">
+                            <div class="certificate-icon">🔐</div>
+                            <h3 class="certificate-title">Cyber Security & Ethical Hacking</h3>
+                            <p class="certificate-issuer">NIELIT Haridwar</p>
+                        </div>
+                        <div class="certificate-card"
+                            data-image="images/Web_App_Development Using_Apache,_MySQL_and_PHP.jpeg"
+                            data-title="Web Application Development" data-issuer="NIELIT Haridwar">
+                            <div class="certificate-icon">🌐</div>
+                            <h3 class="certificate-title">Web Application Development</h3>
+                            <p class="certificate-issuer">NIELIT Haridwar</p>
+                            <p class="certificate-description">Using Apache, MySQL and PHP</p>
+                        </div>
+                        <div class="certificate-card" data-image="images/Java_Programming_&_Apache_NetBeans_IDE.png"
+                            data-title="JAVA Programming & Apache NetBeans IDE" data-issuer="NIELIT Haridwar">
+                            <div class="certificate-icon">☕</div>
+                            <h3 class="certificate-title">JAVA Programming & Apache NetBeans IDE</h3>
+                            <p class="certificate-issuer">NIELIT Haridwar</p>
+                        </div>
+                        <div class="certificate-card" data-image="images/CCC_Certificate.png"
+                            data-title="Course on Computer Concepts (CCC)" data-issuer="NIELIT">
+                            <div class="certificate-icon">💻</div>
+                            <h3 class="certificate-title">Course on Computer Concepts (CCC)</h3>
+                            <p class="certificate-issuer">NIELIT</p>
+                        </div>
                     </div>
-                    <div class="certificate-card">
-                        <div class="certificate-icon">📊</div>
-                        <h3 class="certificate-title">Data Science using Python</h3>
-                        <p class="certificate-issuer">NIELIT Gorakhpur</p>
-                    </div>
-                    <div class="certificate-card">
-                        <div class="certificate-icon">🔐</div>
-                        <h3 class="certificate-title">Cyber Security & Ethical Hacking</h3>
-                        <p class="certificate-issuer">NIELIT Haridwar</p>
-                    </div>
-                    <div class="certificate-card">
-                        <div class="certificate-icon">🌐</div>
-                        <h3 class="certificate-title">Web Application Development</h3>
-                        <p class="certificate-issuer">NIELIT Haridwar</p>
-                        <p class="certificate-description">Using Apache, MySQL and PHP</p>
-                    </div>
-                    <div class="certificate-card">
-                        <div class="certificate-icon">☕</div>
-                        <h3 class="certificate-title">JAVA Programming & Apache NetBeans IDE</h3>
-                        <p class="certificate-issuer">NIELIT Haridwar</p>
-                    </div>
-                    <div class="certificate-card">
-                        <div class="certificate-icon">💻</div>
-                        <h3 class="certificate-title">Course on Computer Concepts (CCC)</h3>
-                        <p class="certificate-issuer">NIELIT</p>
+
+                    <!-- Right Side - Certificate Detail View WITH CLOSE BUTTON -->
+                    <div class="certificate-detail-view">
+                        <button class="detail-close-btn" aria-label="Close">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                        <div class="detail-header">
+                            <h3 id="detailTitle2">Certificate Title</h3>
+                            <p id="detailIssuer2">Issuer</p>
+                        </div>
+                        <div class="detail-image">
+                            <img id="detailImage2" src="" alt="Certificate">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1008,7 +1062,9 @@
                             </svg>
                             <div>
                                 <h4>Email</h4>
-                                <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a6c7d5ced3d2c9d5cec1919e96e6c9d3d2cac9c9cd88c5c9cb">[email&#160;protected]</a></p>
+                                <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="a6c7d5ced3d2c9d5cec1919e96e6c9d3d2cac9c9cd88c5c9cb">[email&#160;protected]</a>
+                                </p>
                             </div>
                         </div>
                         <div class="contact-item">
