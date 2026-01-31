@@ -1,0 +1,748 @@
+progects.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio projects by Ashutosh - Detailed case studies of mobile applications built with Kotlin Multiplatform">
+    <title>Projects - Ashutosh | Mobile Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html">Ashutosh<span class="dot">.</span></a>
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>My Projects</h1>
+            <p>Deep dive into the applications I've built</p>
+        </div>
+    </section>
+
+    <!-- Projects Detail Section -->
+    <section class="projects-detail">
+        <div class="container">
+            
+            <!-- Project 1: EVA2Z Connect -->
+            <div class="project-detail" id="eva2z">
+                <div class="project-header">
+                    <h2>EVA2Z Connect - GPS Tracking for Electric Vehicles</h2>
+                    <div class="project-meta">
+                        <span><i class="fas fa-calendar"></i> 2023 - 2024</span>
+                        <span><i class="fas fa-building"></i> Evatoz Solutions Pvt. Ltd.</span>
+                        <span><i class="fas fa-users"></i> Team: 3 Developers</span>
+                    </div>
+                </div>
+
+                <div class="project-overview">
+                    <h3><i class="fas fa-lightbulb"></i> Project Overview</h3>
+                    <p>
+                        EVA2Z Connect is a comprehensive GPS tracking application designed specifically for electric vehicles. 
+                        Built using Kotlin Multiplatform (KMP), it provides real-time vehicle tracking, route history, 
+                        geofencing, and device management across both Android and iOS platforms with 85% code sharing.
+                    </p>
+                </div>
+
+                <div class="project-purpose">
+                    <h3><i class="fas fa-bullseye"></i> Purpose & Problem Statement</h3>
+                    <div class="purpose-grid">
+                        <div class="purpose-item">
+                            <i class="fas fa-times-circle"></i>
+                            <h4>Problem</h4>
+                            <p>EV owners lacked a unified solution to monitor vehicle location, battery status, and trip analytics in real-time.</p>
+                        </div>
+                        <div class="purpose-item">
+                            <i class="fas fa-check-circle"></i>
+                            <h4>Solution</h4>
+                            <p>Cross-platform GPS tracking app with live monitoring, intelligent geofencing, and comprehensive analytics dashboard.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-stack">
+                    <h3><i class="fas fa-code"></i> Technology Stack</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Kotlin Multiplatform (KMP)</span>
+                        <span class="tech-tag">Jetpack Compose</span>
+                        <span class="tech-tag">SwiftUI</span>
+                        <span class="tech-tag">Google Maps SDK</span>
+                        <span class="tech-tag">Firebase Firestore</span>
+                        <span class="tech-tag">Firebase Analytics</span>
+                        <span class="tech-tag">MVVM Architecture</span>
+                        <span class="tech-tag">Coroutines & Flow</span>
+                        <span class="tech-tag">Ktor Client</span>
+                        <span class="tech-tag">SQLDelight</span>
+                    </div>
+                </div>
+
+                <div class="project-lifecycle">
+                    <h3><i class="fas fa-project-diagram"></i> Development Lifecycle</h3>
+                    <div class="lifecycle-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker">1</div>
+                            <div class="timeline-content">
+                                <h4>Planning & Requirements (Week 1-2)</h4>
+                                <ul>
+                                    <li>Analyzed market requirements for EV tracking solutions</li>
+                                    <li>Defined core features: real-time tracking, geofencing, device management</li>
+                                    <li>Created wireframes and user flow diagrams</li>
+                                    <li>Set up KMP project structure with shared business logic</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">2</div>
+                            <div class="timeline-content">
+                                <h4>Core Development (Week 3-10)</h4>
+                                <ul>
+                                    <li>Implemented shared networking layer with Ktor</li>
+                                    <li>Built GPS tracking service with background location updates</li>
+                                    <li>Developed real-time map interface with Google Maps SDK</li>
+                                    <li>Created Firebase integration for device data sync</li>
+                                    <li>Implemented geofencing with customizable boundaries</li>
+                                    <li>Built device management: add, remove, configure devices</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">3</div>
+                            <div class="timeline-content">
+                                <h4>Platform-Specific UI (Week 11-14)</h4>
+                                <ul>
+                                    <li>Android: Jetpack Compose for Material Design 3</li>
+                                    <li>iOS: SwiftUI for native iOS experience</li>
+                                    <li>Implemented auto-zoom and location tracking features</li>
+                                    <li>Created responsive layouts for tablets and phones</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">4</div>
+                            <div class="timeline-content">
+                                <h4>Testing & Optimization (Week 15-17)</h4>
+                                <ul>
+                                    <li>Unit testing for shared business logic</li>
+                                    <li>UI testing on multiple devices and screen sizes</li>
+                                    <li>Performance optimization: reduced battery drain by 30%</li>
+                                    <li>Fixed BLE connection stability issues</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">5</div>
+                            <div class="timeline-content">
+                                <h4>Deployment & Monitoring (Week 18-20)</h4>
+                                <ul>
+                                    <li>Google Play Store and App Store submission</li>
+                                    <li>Firebase Analytics integration for user behavior tracking</li>
+                                    <li>Crash reporting with Firebase Crashlytics</li>
+                                    <li>Post-launch bug fixes and improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="key-features">
+                    <h3><i class="fas fa-star"></i> Key Features</h3>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <h4>Real-time GPS Tracking</h4>
+                            <p>Live vehicle location with auto-zoom and smooth map animations</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-draw-polygon"></i>
+                            <h4>Geofencing</h4>
+                            <p>Create custom geofences and receive alerts on entry/exit</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-route"></i>
+                            <h4>Route History</h4>
+                            <p>View detailed trip history with playback functionality</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4>Device Management</h4>
+                            <p>Add, configure, and manage multiple tracking devices</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-bell"></i>
+                            <h4>Smart Notifications</h4>
+                            <p>Real-time alerts for speed, geofence, and battery status</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Analytics Dashboard</h4>
+                            <p>Comprehensive trip statistics and vehicle insights</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="screenshots">
+                    <h3><i class="fas fa-images"></i> Screenshots</h3>
+                    <div class="screenshot-gallery">
+                        <div class="screenshot-item">
+                            <img src="assets/screenshots/eva2z-home.jpg" alt="EVA2Z Home Screen">
+                            <p>Home Screen with Live Tracking</p>
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="assets/screenshots/eva2z-map.jpg" alt="EVA2Z Map View">
+                            <p>Map View with Geofencing</p>
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="assets/screenshots/eva2z-devices.jpg" alt="EVA2Z Device Management">
+                            <p>Device Management</p>
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="assets/screenshots/eva2z-analytics.jpg" alt="EVA2Z Analytics">
+                            <p>Analytics Dashboard</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="improvements">
+                    <h3><i class="fas fa-tools"></i> What I Improved</h3>
+                    <div class="improvements-list">
+                        <div class="improvement-item success">
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <h4>85% Code Sharing</h4>
+                                <p>Achieved maximum code reusability between Android and iOS, reducing development time by 40%</p>
+                            </div>
+                        </div>
+                        <div class="improvement-item success">
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <h4>Battery Optimization</h4>
+                                <p>Reduced battery consumption by 30% through intelligent location update intervals</p>
+                            </div>
+                        </div>
+                        <div class="improvement-item success">
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <h4>BLE Stability</h4>
+                                <p>Implemented auto-reconnect mechanism with exponential backoff for 95% connection reliability</p>
+                            </div>
+                        </div>
+                        <div class="improvement-item success">
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <h4>Offline Support</h4>
+                                <p>Added SQLDelight for local caching, enabling offline route viewing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="future-improvements">
+                    <h3><i class="fas fa-rocket"></i> Future Enhancements</h3>
+                    <div class="improvements-list">
+                        <div class="improvement-item pending">
+                            <i class="fas fa-hourglass-half"></i>
+                            <div>
+                                <h4>AI-Powered Route Optimization</h4>
+                                <p>Implement machine learning for suggesting optimal routes based on traffic and battery levels</p>
+                            </div>
+                        </div>
+                        <div class="improvement-item pending">
+                            <i class="fas fa-hourglass-half"></i>
+                            <div>
+                                <h4>Voice Commands</h4>
+                                <p>Add voice control for hands-free navigation and alerts</p>
+                            </div>
+                        </div>
+                        <div class="improvement-item pending">
+                            <i class="fas fa-hourglass-half"></i>
+                            <div>
+                                <h4>Fleet Management</h4>
+                                <p>Enterprise features for managing multiple vehicles with admin dashboard</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-results">
+                    <h3><i class="fas fa-chart-bar"></i> Results & Impact</h3>
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <h4>5000+</h4>
+                            <p>Active Users</p>
+                        </div>
+                        <div class="result-card">
+                            <h4>4.5/5</h4>
+                            <p>App Store Rating</p>
+                        </div>
+                        <div class="result-card">
+                            <h4>40%</h4>
+                            <p>Faster Development</p>
+                        </div>
+                        <div class="result-card">
+                            <h4>30%</h4>
+                            <p>Battery Savings</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="project-divider">
+
+            <!-- Project 2: Niharika Attendance System -->
+            <div class="project-detail" id="niharika">
+                <div class="project-header">
+                    <h2>Niharika Attendance System - AI-Powered Face Recognition</h2>
+                    <div class="project-meta">
+                        <span><i class="fas fa-calendar"></i> 2024</span>
+                        <span><i class="fas fa-building"></i> Evatoz Solutions Pvt. Ltd.</span>
+                        <span><i class="fas fa-users"></i> Solo Project</span>
+                    </div>
+                </div>
+
+                <div class="project-overview">
+                    <h3><i class="fas fa-lightbulb"></i> Project Overview</h3>
+                    <p>
+                        An intelligent attendance management system leveraging on-device ML Kit for face recognition. 
+                        Successfully transitioned from expensive cloud-based facial recognition to a free, on-device solution 
+                        while achieving 99.65% accuracy and passing Google Play Store production approval.
+                    </p>
+                </div>
+
+                <div class="project-purpose">
+                    <h3><i class="fas fa-bullseye"></i> Purpose & Problem Statement</h3>
+                    <div class="purpose-grid">
+                        <div class="purpose-item">
+                            <i class="fas fa-times-circle"></i>
+                            <h4>Problem</h4>
+                            <p>Manual attendance tracking was time-consuming and prone to proxy attendance. Cloud-based facial recognition was costing ₹3,290/month.</p>
+                        </div>
+                        <div class="purpose-item">
+                            <i class="fas fa-check-circle"></i>
+                            <h4>Solution</h4>
+                            <p>Built an on-device ML-powered system that eliminated cloud costs while maintaining 99.65% accuracy with real-time face detection.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-stack">
+                    <h3><i class="fas fa-code"></i> Technology Stack</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Android (Kotlin)</span>
+                        <span class="tech-tag">Jetpack Compose</span>
+                        <span class="tech-tag">ML Kit Face Detection</span>
+                        <span class="tech-tag">CameraX</span>
+                        <span class="tech-tag">Firebase Firestore</span>
+                        <span class="tech-tag">Firebase Storage</span>
+                        <span class="tech-tag">Room Database</span>
+                        <span class="tech-tag">MVVM Architecture</span>
+                        <span class="tech-tag">Coroutines & Flow</span>
+                        <span class="tech-tag">Hilt DI</span>
+                    </div>
+                </div>
+
+                <div class="project-lifecycle">
+                    <h3><i class="fas fa-project-diagram"></i> Development Lifecycle</h3>
+                    <div class="lifecycle-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker">1</div>
+                            <div class="timeline-content">
+                                <h4>Research & Planning (Week 1-2)</h4>
+                                <ul>
+                                    <li>Evaluated cloud vs. on-device ML solutions</li>
+                                    <li>Tested ML Kit face detection accuracy and performance</li>
+                                    <li>Designed face embedding storage and matching algorithm</li>
+                                    <li>Created database schema for attendance records</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">2</div>
+                            <div class="timeline-content">
+                                <h4>Core ML Integration (Week 3-6)</h4>
+                                <ul>
+                                    <li>Integrated ML Kit Face Detection API</li>
+                                    <li>Built face enrollment system with multiple angle capture</li>
+                                    <li>Implemented face matching with cosine similarity algorithm</li>
+                                    <li>Optimized face detection for different lighting conditions</li>
+                                    <li>Added liveness detection to prevent spoofing</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">3</div>
+                            <div class="timeline-content">
+                                <h4>UI Development (Week 7-9)</h4>
+                                <ul>
+                                    <li>Created camera preview with face detection overlay</li>
+                                    <li>Built admin panel for employee management</li>
+                                    <li>Designed attendance dashboard with analytics</li>
+                                    <li>Implemented role-based access control</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">4</div>
+                            <div class="timeline-content">
+                                <h4>Testing & Accuracy Tuning (Week 10-12)</h4>
+                                <ul>
+                                    <li>Tested with 100+ employee faces in various conditions</li>
+                                    <li>Achieved 99.65% accuracy through threshold optimization</li>
+                                    <li>Reduced false positives to less than 0.5%</li>
+                                    <li>Performance testing on low-end devices</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">5</div>
+                            <div class="timeline-content">
+                                <h4>Deployment (Week 13-14)</h4>
+                                <ul>
+                                    <li>Google Play Store production approval</li>
+                                    <li>Set up Firebase for cloud sync and backup</li>
+                                    <li>Created admin documentation and training materials</li>
+                                    <li>Deployed to company with 50+ employees</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="key-features">
+                    <h3><i class="fas fa-star"></i> Key Features</h3>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-brain"></i>
+                            <h4>99.65% Accuracy</h4>
+                            <p>ML Kit-powered face recognition with liveness detection</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-bolt"></i>
+                            <h4>Real-time Detection</h4>
+                            <p>Instant face detection and matching in under 2 seconds</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-user-plus"></i>
+                            <h4>Easy Enrollment</h4>
+                            <p>Multi-angle face capture for robust recognition</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Anti-Spoofing</h4>
+                            <p>Liveness detection prevents photo/video spoofing</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-chart-pie"></i>
+                            <h4>Analytics Dashboard</h4>
+                            <p>Comprehensive reports on attendance patterns</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-users-cog"></i>
+                            <h4>Role-Based Access</h4>
+                            <p>Admin, Manager, and Employee access levels</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="screenshots">
+                    <h3><i class="fas fa-images"></i> Screenshots</h3>
+                    <div class="screenshot-gallery">
+                        <div class="screenshot-item">
+                            <img src="assets/screenshots/niharika-login.jpg" alt="Niharika Login">
+                            <p>Face Recognition Login</p>
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="assets/screenshots/niharika-enrollment.jpg" alt="Niharika Enrollment">
+                            <p>Face Enrollment Process</p>
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="assets/screenshots/niharika-dashboard.jpg" alt="Niharika Dashboard">
+                            <p>Admin Dashboard</p>
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="assets/screenshots/niharika-analytics.jpg" alt="Niharika Analytics">
+                            <p>Attendance Analytics</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="improvements">
+                    <h3><i class="fas fa-tools"></i> What I Improved</h3>
+                    <div class="improvements-list">
+                        <div class="improvement-item success">
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <h4>Cost Reduction</h4>
+                                <p>Eliminated ₹3,290/month cloud costs by migrating to on-device ML Kit processing</p>
+                            </div>
+                        </div>
+                        <div class="improvement-item success">
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <h4>99.65% Accuracy</h4>
+                                <p>Achieved industry-leading accuracy through ML model optimization and threshold tuning</p>
+                            </div>
+                        </div>
+                        <div class="improvement-item success">
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <h4>Privacy First</h4>
+                                <p>All face processing happens on-device, ensuring data never leaves the phone</p>
+                            </div>
+                        </div>
+                        <div class="improvement-item success">
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <h4>Offline Capability</h4>
+                                <p>Full functionality without internet, syncs when connected</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="future-improvements">
+                    <h3><i class="fas fa-rocket"></i> Future Enhancements</h3>
+                    <div class="improvements-list">
+                        <div class="improvement-item pending">
+                            <i class="fas fa-hourglass-half"></i>
+                            <div>
+                                <h4>Multi-Face Detection</h4>
+                                <p>Support for marking attendance of multiple employees simultaneously</p>
+                            </div>
+                        </div>
+                        <div class="improvement-item pending">
+                            <i class="fas fa-hourglass-half"></i>
+                            <div>
+                                <h4>Geofencing</h4>
+                                <p>Location-based attendance to ensure employees are on-premises</p>
+                            </div>
+                        </div>
+                        <div class="improvement-item pending">
+                            <i class="fas fa-hourglass-half"></i>
+                            <div>
+                                <h4>Leave Management</h4>
+                                <p>Integrated leave application and approval workflow</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-results">
+                    <h3><i class="fas fa-chart-bar"></i> Results & Impact</h3>
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <h4>₹0</h4>
+                            <p>Monthly Cost</p>
+                        </div>
+                        <div class="result-card">
+                            <h4>99.65%</h4>
+                            <p>Accuracy Rate</p>
+                        </div>
+                        <div class="result-card">
+                            <h4>&lt;2s</h4>
+                            <p>Recognition Time</p>
+                        </div>
+                        <div class="result-card">
+                            <h4>100%</h4>
+                            <p>Privacy Protected</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="project-divider">
+
+            <!-- Project 3: PhonePe Integration -->
+            <div class="project-detail" id="phonepe">
+                <div class="project-header">
+                    <h2>PhonePe Payment Integration - Cross-Platform Solution</h2>
+                    <div class="project-meta">
+                        <span><i class="fas fa-calendar"></i> 2024</span>
+                        <span><i class="fas fa-building"></i> Freelance Project</span>
+                        <span><i class="fas fa-users"></i> Solo Developer</span>
+                    </div>
+                </div>
+
+                <div class="project-overview">
+                    <h3><i class="fas fa-lightbulb"></i> Project Overview</h3>
+                    <p>
+                        Implemented seamless PhonePe payment gateway integration across Android and iOS platforms using 
+                        Kotlin Multiplatform architecture. Created a unified payment flow with shared business logic and 
+                        platform-specific UI implementations.
+                    </p>
+                </div>
+
+                <div class="project-purpose">
+                    <h3><i class="fas fa-bullseye"></i> Purpose & Problem Statement</h3>
+                    <div class="purpose-grid">
+                        <div class="purpose-item">
+                            <i class="fas fa-times-circle"></i>
+                            <h4>Problem</h4>
+                            <p>Client needed reliable payment integration that worked identically on both Android and iOS without duplicating code.</p>
+                        </div>
+                        <div class="purpose-item">
+                            <i class="fas fa-check-circle"></i>
+                            <h4>Solution</h4>
+                            <p>Built KMP-based payment module with 70% code sharing, ensuring consistent payment flow across platforms.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-stack">
+                    <h3><i class="fas fa-code"></i> Technology Stack</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Kotlin Multiplatform</span>
+                        <span class="tech-tag">PhonePe SDK</span>
+                        <span class="tech-tag">Jetpack Compose</span>
+                        <span class="tech-tag">SwiftUI</span>
+                        <span class="tech-tag">Ktor Client</span>
+                        <span class="tech-tag">Firebase Functions</span>
+                        <span class="tech-tag">SQLDelight</span>
+                        <span class="tech-tag">MVVM Architecture</span>
+                    </div>
+                </div>
+
+                <div class="key-features">
+                    <h3><i class="fas fa-star"></i> Key Features</h3>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-credit-card"></i>
+                            <h4>Unified Payment Flow</h4>
+                            <p>Consistent checkout experience across platforms</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Secure Transactions</h4>
+                            <p>End-to-end encryption and PCI compliance</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-redo"></i>
+                            <h4>Auto-Retry Logic</h4>
+                            <p>Intelligent retry mechanism for failed payments</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-history"></i>
+                            <h4>Transaction History</h4>
+                            <p>Complete payment history with receipt generation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="improvements">
+                    <h3><i class="fas fa-tools"></i> What I Improved</h3>
+                    <div class="improvements-list">
+                        <div class="improvement-item success">
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <h4>70% Code Sharing</h4>
+                                <p>Reduced development time and maintenance effort through shared payment logic</p>
+                            </div>
+                        </div>
+                        <div class="improvement-item success">
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <h4>Error Handling</h4>
+                                <p>Comprehensive error handling with user-friendly messages</p>
+                            </div>
+                        </div>
+                        <div class="improvement-item success">
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <h4>Offline Support</h4>
+                                <p>Local caching of transaction data for offline viewing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-results">
+                    <h3><i class="fas fa-chart-bar"></i> Results & Impact</h3>
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <h4>100%</h4>
+                            <p>Transaction Success</p>
+                        </div>
+                        <div class="result-card">
+                            <h4>70%</h4>
+                            <p>Code Sharing</p>
+                        </div>
+                        <div class="result-card">
+                            <h4>50%</h4>
+                            <p>Dev Time Saved</p>
+                        </div>
+                        <div class="result-card">
+                            <h4>0</h4>
+                            <p>Payment Failures</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Interested in working together?</h2>
+            <p>Let's discuss how I can help bring your mobile app ideas to life</p>
+            <a href="index.html#contact" class="btn btn-primary">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Ashutosh<span class="dot">.</span></h3>
+                    <p>Mobile Application Developer specializing in Kotlin Multiplatform</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#skills">Skills</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Me</h4>
+                    <div class="social-icons">
+                        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ashutosh. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,336 @@
+blog.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog by Ashutosh - Insights on Kotlin Multiplatform, Android Development, and Mobile Tech">
+    <title>Blog - Ashutosh | Mobile Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html">Ashutosh<span class="dot">.</span></a>
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Blog</h1>
+            <p>Sharing my journey, insights, and learnings in mobile development</p>
+        </div>
+    </section>
+
+    <!-- Blog Filter -->
+    <section class="blog-filter">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">All Posts</button>
+                <button class="filter-btn" data-category="kmp">Kotlin Multiplatform</button>
+                <button class="filter-btn" data-category="android">Android</button>
+                <button class="filter-btn" data-category="tutorial">Tutorials</button>
+                <button class="filter-btn" data-category="case-study">Case Studies</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="blog-grid">
+                
+                <!-- Blog Post 1 -->
+                <article class="blog-card" data-category="kmp">
+                    <div class="blog-image">
+                        <img src="assets/blog/kmp-code-sharing.jpg" alt="Achieving 85% Code Sharing with KMP">
+                        <span class="blog-category">Kotlin Multiplatform</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> January 15, 2025</span>
+                            <span><i class="fas fa-clock"></i> 8 min read</span>
+                        </div>
+                        <h2>Achieving 85% Code Sharing with Kotlin Multiplatform</h2>
+                        <p>
+                            Learn how I achieved 85% code sharing between Android and iOS in the EVA2Z Connect app 
+                            using Kotlin Multiplatform. Discover the architecture patterns, best practices, and 
+                            challenges I faced along the way.
+                        </p>
+                        <div class="blog-tags">
+                            <span class="tag">KMP</span>
+                            <span class="tag">Cross-Platform</span>
+                            <span class="tag">Architecture</span>
+                        </div>
+                        <a href="blog-post-kmp-code-sharing.html" class="blog-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-card" data-category="android tutorial">
+                    <div class="blog-image">
+                        <img src="assets/blog/ml-kit-migration.jpg" alt="Migrating from Cloud to On-Device ML Kit">
+                        <span class="blog-category">Tutorial</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> January 8, 2025</span>
+                            <span><i class="fas fa-clock"></i> 10 min read</span>
+                        </div>
+                        <h2>Migrating from Cloud to On-Device ML Kit: A Cost Optimization Story</h2>
+                        <p>
+                            How I reduced monthly cloud costs from ₹3,290 to ₹0 while maintaining 99.65% accuracy 
+                            in face recognition. A complete guide to implementing ML Kit Face Detection for 
+                            attendance systems.
+                        </p>
+                        <div class="blog-tags">
+                            <span class="tag">ML Kit</span>
+                            <span class="tag">Face Recognition</span>
+                            <span class="tag">Cost Optimization</span>
+                        </div>
+                        <a href="blog-post-ml-kit-migration.html" class="blog-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="blog-card" data-category="android tutorial">
+                    <div class="blog-image">
+                        <img src="assets/blog/ble-debugging.jpg" alt="Debugging BLE Connection Issues">
+                        <span class="blog-category">Tutorial</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> December 28, 2024</span>
+                            <span><i class="fas fa-clock"></i> 12 min read</span>
+                        </div>
+                        <h2>Debugging BLE Connection Issues: Auto-Reconnect Pattern</h2>
+                        <p>
+                            Deep dive into Bluetooth Low Energy debugging. Learn how to implement robust 
+                            auto-reconnect mechanisms with exponential backoff and achieve 95% connection 
+                            reliability in production.
+                        </p>
+                        <div class="blog-tags">
+                            <span class="tag">BLE</span>
+                            <span class="tag">Debugging</span>
+                            <span class="tag">Android</span>
+                        </div>
+                        <a href="blog-post-ble-debugging.html" class="blog-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 4 -->
+                <article class="blog-card" data-category="kmp tutorial">
+                    <div class="blog-image">
+                        <img src="assets/blog/jetpack-compose.jpg" alt="Jetpack Compose Best Practices">
+                        <span class="blog-category">Kotlin Multiplatform</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> December 20, 2024</span>
+                            <span><i class="fas fa-clock"></i> 7 min read</span>
+                        </div>
+                        <h2>Jetpack Compose in KMP: Sharing UI Across Platforms</h2>
+                        <p>
+                            Explore how to leverage Jetpack Compose for building shared UI components in 
+                            Kotlin Multiplatform projects. Best practices, performance tips, and real-world examples.
+                        </p>
+                        <div class="blog-tags">
+                            <span class="tag">Jetpack Compose</span>
+                            <span class="tag">KMP</span>
+                            <span class="tag">UI</span>
+                        </div>
+                        <a href="blog-post-jetpack-compose-kmp.html" class="blog-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 5 -->
+                <article class="blog-card" data-category="case-study">
+                    <div class="blog-image">
+                        <img src="assets/blog/firebase-analytics.jpg" alt="Firebase Analytics Integration">
+                        <span class="blog-category">Case Study</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> December 12, 2024</span>
+                            <span><i class="fas fa-clock"></i> 6 min read</span>
+                        </div>
+                        <h2>Implementing Firebase Analytics in Cross-Platform Apps</h2>
+                        <p>
+                            A practical guide to integrating Firebase Analytics across Android and iOS using 
+                            Kotlin Multiplatform. Track user behavior, conversion funnels, and custom events 
+                            with shared logic.
+                        </p>
+                        <div class="blog-tags">
+                            <span class="tag">Firebase</span>
+                            <span class="tag">Analytics</span>
+                            <span class="tag">KMP</span>
+                        </div>
+                        <a href="blog-post-firebase-analytics.html" class="blog-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 6 -->
+                <article class="blog-card" data-category="android tutorial">
+                    <div class="blog-image">
+                        <img src="assets/blog/google-maps.jpg" alt="Google Maps Integration">
+                        <span class="blog-category">Tutorial</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> December 5, 2024</span>
+                            <span><i class="fas fa-clock"></i> 9 min read</span>
+                        </div>
+                        <h2>Building Real-time GPS Tracking with Google Maps</h2>
+                        <p>
+                            Complete guide to implementing real-time location tracking, geofencing, and auto-zoom 
+                            features using Google Maps SDK. Includes battery optimization techniques and best practices.
+                        </p>
+                        <div class="blog-tags">
+                            <span class="tag">Google Maps</span>
+                            <span class="tag">GPS</span>
+                            <span class="tag">Location</span>
+                        </div>
+                        <a href="blog-post-google-maps.html" class="blog-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 7 -->
+                <article class="blog-card" data-category="kmp">
+                    <div class="blog-image">
+                        <img src="assets/blog/phonepe-integration.jpg" alt="PhonePe Payment Integration">
+                        <span class="blog-category">Kotlin Multiplatform</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> November 28, 2024</span>
+                            <span><i class="fas fa-clock"></i> 11 min read</span>
+                        </div>
+                        <h2>Integrating PhonePe Payments in Kotlin Multiplatform</h2>
+                        <p>
+                            Step-by-step guide to implementing PhonePe payment gateway across Android and iOS 
+                            platforms using KMP. Covers error handling, transaction verification, and security best practices.
+                        </p>
+                        <div class="blog-tags">
+                            <span class="tag">PhonePe</span>
+                            <span class="tag">Payments</span>
+                            <span class="tag">KMP</span>
+                        </div>
+                        <a href="blog-post-phonepe-integration.html" class="blog-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 8 -->
+                <article class="blog-card" data-category="android case-study">
+                    <div class="blog-image">
+                        <img src="assets/blog/play-store-approval.jpg" alt="Google Play Store Approval">
+                        <span class="blog-category">Case Study</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> November 20, 2024</span>
+                            <span><i class="fas fa-clock"></i> 8 min read</span>
+                        </div>
+                        <h2>Navigating Google Play Store Production Approval</h2>
+                        <p>
+                            My experience getting the Niharika Attendance System approved for production. 
+                            Learn about common rejection reasons, how to handle sensitive permissions, and 
+                            tips for a smooth approval process.
+                        </p>
+                        <div class="blog-tags">
+                            <span class="tag">Play Store</span>
+                            <span class="tag">App Publishing</span>
+                            <span class="tag">Compliance</span>
+                        </div>
+                        <a href="blog-post-play-store-approval.html" class="blog-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2><i class="fas fa-envelope"></i> Subscribe to my Newsletter</h2>
+                <p>Get the latest articles and insights on mobile development directly in your inbox</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Ashutosh<span class="dot">.</span></h3>
+                    <p>Mobile Application Developer specializing in Kotlin Multiplatform</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#skills">Skills</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Me</h4>
+                    <div class="social-icons">
+                        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ashutosh. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

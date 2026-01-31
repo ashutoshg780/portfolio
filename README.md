@@ -1,669 +1,237 @@
-# 🚀 Ashutosh Gupta | Mobile Application Developer Portfolio
+# Ashutosh - Mobile Developer Portfolio 🚀
 
-<div align="center">
+A modern, responsive portfolio website showcasing mobile development expertise with a focus on Kotlin Multiplatform (KMP) development.
 
-![Portfolio Banner](https://img.shields.io/badge/Portfolio-Live-brightgreen?style=for-the-badge)
-![GitHub Pages](https://img.shields.io/badge/Hosted%20on-GitHub%20Pages-181717?style=for-the-badge&logo=github)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+## 🌟 Features
 
-**A modern, minimal, and futuristic portfolio showcasing expertise in Kotlin Multiplatform & Android Development**
+- **Responsive Design**: Works perfectly on desktop, tablet, and mobile devices
+- **Single Page Navigation**: Smooth scrolling between sections on homepage
+- **Detailed Project Showcase**: Individual project pages with lifecycle, screenshots, and metrics
+- **Blog Platform**: Publish technical articles and tutorials
+- **Interactive Elements**: Animations, hover effects, and smooth transitions
+- **Contact Form**: Easy way for potential clients/employers to reach out
+- **SEO Optimized**: Meta tags and semantic HTML for better search engine visibility
+- **Performance Optimized**: Lazy loading, debounced scroll events, optimized assets
 
-[View Live Demo](#) • [Report Bug](https://github.com/ashutoshg780/portfolio/issues) • [Request Feature](https://github.com/ashutoshg780/portfolio/issues)
-
-</div>
-
----
-
-## ✨ Features
-
-<table>
-<tr>
-<td>
-
-🌓 **Dark/Light Mode**  
-Seamless theme switching with persistent preferences
-
-📱 **Fully Responsive**  
-Optimized for mobile, tablet & desktop
-
-⚡ **Lightning Fast**  
-Pure HTML, CSS & JavaScript - No frameworks
-
-</td>
-<td>
-
-🎨 **Material 3 Design**  
-Modern, clean, tech-focused aesthetic
-
-🔄 **Smooth Animations**  
-Professional transitions & scroll effects
-
-♿ **Accessible**  
-WCAG compliant with keyboard navigation
-
-</td>
-</tr>
-</table>
-
----
-
-## 🛠️ Tech Stack
-
-```
-Frontend
-├── HTML5          → Semantic markup
-├── CSS3           → Modern styling (Grid, Flexbox, Variables)
-├── JavaScript     → Vanilla JS (Zero dependencies)
-└── Fonts          → Inter & Space Grotesk (Google Fonts)
-
-Design
-├── Material 3     → Design system
-├── Purple Theme   → Custom color palette
-└── Animations     → Cubic-bezier transitions
-```
-
----
-
-## 📂 Project Structure
+## 📁 File Structure
 
 ```
 portfolio/
-│
-├── index.html                  # Main HTML file
-├── styles.css                  # All styles with theme variables
-├── script.js                   # Interactive functionality
-├── README.md                   # Documentation
-├── DEPLOYMENT.md               # GitHub Pages guide
-└── CONTACT_FORM_SETUP.md       # Form integration guide
+├── index.html              # Main homepage (single page with all sections)
+├── projects.html           # Detailed project showcase
+├── blog.html              # Blog listing page
+├── blog-post-kmp-code-sharing.html  # Sample blog post (template)
+├── styles.css             # Complete stylesheet
+├── script.js              # Interactive JavaScript
+├── assets/                # Media files (create this folder)
+│   ├── profile.jpg        # Your profile picture
+│   ├── resume.pdf         # Your resume/CV
+│   ├── projects/          # Project images
+│   │   ├── eva2z.jpg
+│   │   ├── niharika.jpg
+│   │   └── phonepe.jpg
+│   ├── screenshots/       # Detailed project screenshots
+│   │   ├── eva2z-home.jpg
+│   │   ├── eva2z-map.jpg
+│   │   ├── niharika-login.jpg
+│   │   └── ...
+│   └── blog/             # Blog featured images
+│       ├── kmp-code-sharing.jpg
+│       ├── ml-kit-migration.jpg
+│       └── ...
+└── README.md             # This file
 ```
-
----
-
-## 🚀 Quick Deployment
-
-Want to deploy your portfolio? Check out our comprehensive deployment guide:
-
-📖 **[DEPLOYMENT.md](DEPLOYMENT.md)** - Complete step-by-step guide for GitHub Pages
-
-**TL;DR:**
-```bash
-git clone https://github.com/<username>/<username>.github.io.git
-cd <username>.github.io
-# Add your files
-git add .
-git commit -m "🚀 Deploy portfolio"
-git push origin main
-# Enable Pages in Settings → Pages
-```
-
-**Alternative Hosting:**
-- [![Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start)
-- [![Vercel](https://vercel.com/button)](https://vercel.com/import)
-
----
-
-## 🎨 Customization Guide
-
-### 1️⃣ Personal Information
-
-**File:** `index.html`
-
-```html
-<!-- Update these sections -->
-<h1 class="hero-title">Your Name</h1>
-<h2 class="hero-subtitle">Your Title</h2>
-<p class="hero-description">Your description...</p>
-<p>your.email@example.com</p>
-<p>+91-XXXXXXXXXX</p>
-```
-
-### 2️⃣ Color Theme
-
-**File:** `styles.css`
-
-```css
-:root {
-    --accent-primary: #6750a4;      /* Primary color */
-    --accent-secondary: #7f67be;    /* Secondary color */
-    /* Customize other colors as needed */
-}
-```
-
-### 3️⃣ Projects
-
-Add your projects in the Featured Projects section:
-
-```html
-<div class="project-card featured">
-    <h3>Project Name</h3>
-    <p>Description...</p>
-    <a href="your-link">View Project</a>
-</div>
-```
-
-### 4️⃣ Contact Form Setup
-
-**Choose from 3 FREE options:**
-
-| Service | Free Tier | Setup Time | Best For |
-|---------|-----------|------------|----------|
-| **EmailJS** | 200 emails/month | 10 min | Custom design |
-| **Formspree** | 50 emails/month | 5 min | Quick setup |
-| **Google Forms** | Unlimited | 2 min | Data collection |
-
-📖 **Detailed guide:** See `CONTACT_FORM_SETUP.md`
-
----
-
-## 📱 Responsive Breakpoints
-
-| Device | Breakpoint | Optimization |
-|--------|-----------|--------------|
-| Desktop | > 968px | Full layout |
-| Tablet | 768px - 968px | Adjusted grid |
-| Mobile | < 768px | Stacked layout |
-| Small Mobile | < 480px | Compact view |
-
----
-
-## 🔧 Local Development
-
-### Option 1: Python Server
-
-```bash
-python -m http.server 8000
-# Open: http://localhost:8000
-```
-
-### Option 2: VS Code Live Server
-
-1. Install "Live Server" extension
-2. Right-click `index.html` → "Open with Live Server"
-
-### Option 3: Direct Browser
-
-Simply open `index.html` in your browser  
-*Note: Some features may not work without a server*
-
----
-
-## ⚡ Performance Optimization
-
-### Current Metrics
-
-✅ **100%** Performance (Lighthouse)  
-✅ **100%** Accessibility  
-✅ **100%** Best Practices  
-✅ **100%** SEO  
-
-### Tips for Production
-
-```bash
-# 1. Minify files
-npm install -g minify
-minify styles.css > styles.min.css
-minify script.js > script.min.js
-
-# 2. Optimize images (when added)
-# Use: TinyPNG, Squoosh, ImageOptim
-
-# 3. Enable caching
-# GitHub Pages: Automatic ✅
-```
-
----
-
-## 🌐 Hosting Options
-
-| Platform | Free Plan | Custom Domain | SSL | Deploy Time |
-|----------|-----------|---------------|-----|-------------|
-| **GitHub Pages** | ✅ Yes | ✅ Yes | ✅ Yes | ~5 min |
-| **Netlify** | ✅ Yes | ✅ Yes | ✅ Yes | ~2 min |
-| **Vercel** | ✅ Yes | ✅ Yes | ✅ Yes | ~2 min |
-| **Cloudflare Pages** | ✅ Yes | ✅ Yes | ✅ Yes | ~3 min |
-
----
-
-## 🐛 Troubleshooting
-
-<details>
-<summary><b>GitHub Pages not showing updated content</b></summary>
-
-**Solution:**  
-- Hard refresh: `Ctrl + Shift + R` (Windows) or `Cmd + Shift + R` (Mac)
-- Wait 5-10 minutes for cache to clear
-- Check GitHub Actions for deployment status
-</details>
-
-<details>
-<summary><b>Theme toggle not working</b></summary>
-
-**Solution:**  
-- Ensure JavaScript is enabled in browser
-- Check if `script.js` is properly loaded
-- Clear browser cache and reload
-</details>
-
-<details>
-<summary><b>Styles not loading</b></summary>
-
-**Solution:**  
-- Verify `styles.css` is in the same directory as `index.html`
-- Check file paths are correct (case-sensitive on Linux)
-- Look for errors in browser console (F12)
-</details>
-
----
-
-## 📊 Browser Support
-
-| Browser | Version | Support |
-|---------|---------|---------|
-| Chrome | Latest | ✅ Full |
-| Firefox | Latest | ✅ Full |
-| Safari | Latest | ✅ Full |
-| Edge | Latest | ✅ Full |
-| Opera | Latest | ✅ Full |
-
----
-
-## 💡 Future Enhancements
-
-- [ ] Add project screenshots/images
-- [ ] Implement blog section
-- [ ] Add testimonials section
-- [ ] Multi-language support
-- [ ] Progressive Web App (PWA)
-- [ ] Analytics integration
-- [ ] Dark mode auto-detect
-
----
-
-## 📄 License
-
-This portfolio template is **free to use** under the MIT License.  
-Feel free to customize it for your own portfolio!
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Here's how:
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
-## 📞 Contact & Support
-
-<div align="center">
-
-**Ashutosh Gupta**
-
-[![Email](https://img.shields.io/badge/Email-ashutoshg780%40outlook.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ashutoshg780@outlook.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-ashutoshg780-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ashutoshg780)
-[![GitHub](https://img.shields.io/badge/GitHub-ashutoshg780-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ashutoshg780)
-
-</div>
-
----
-
-## ⭐ Show Your Support
-
-If you found this portfolio template helpful, please consider:
-
-- ⭐ Starring this repository
-- 🍴 Forking for your own use
-- 📢 Sharing with others
-- 💬 Providing feedback
-
----
-
-<div align="center">
-
-**Built with ❤️ by Ashutosh Gupta**
-
-![Made with Love](https://img.shields.io/badge/Made%20with-❤️-red?style=for-the-badge)
-![Open Source](https://img.shields.io/badge/Open%20Source-Yes-brightgreen?style=for-the-badge)
-
-*Last Updated: January 2025*
-
-</div>
-
-## ✨ Features
-
-- **🌓 Dark/Light Mode Toggle** - Seamless theme switching with persistent preferences
-- **📱 Fully Responsive** - Optimized for all devices (mobile, tablet, desktop)
-- **⚡ Fast & Lightweight** - Pure HTML, CSS, and JavaScript (no frameworks)
-- **🎨 Modern Design** - Clean, minimal, tech-focused aesthetic
-- **🔄 Smooth Animations** - Professional transitions and scroll effects
-- **♿ Accessible** - WCAG compliant with keyboard navigation support
-- **🎯 SEO Optimized** - Meta tags and semantic HTML
-
-## 🛠️ Tech Stack
-
-- **HTML5** - Semantic markup
-- **CSS3** - Modern styling with CSS Grid, Flexbox, and CSS Variables
-- **Vanilla JavaScript** - No dependencies, pure JS
-- **Google Fonts** - Inter & Space Grotesk typography
-
-## 📂 Project Structure
-
-```
-portfolio/
-├── index.html          # Main HTML file
-├── styles.css          # All styles with theme variables
-├── script.js           # Interactive functionality
-└── README.md           # Documentation (this file)
-```
-
-## 🚀 Deployment to GitHub Pages (FREE Hosting)
-
-### Step 1: Prepare Your Repository
-
-1. **Create a new GitHub repository**
-   ```bash
-   # Go to github.com and create a new repository
-   # Name it: <your-username>.github.io
-   # For example: ashutosh-dev.github.io
-   ```
-
-2. **Clone the repository locally**
-   ```bash
-   git clone https://github.com/<your-username>/<your-username>.github.io.git
-   cd <your-username>.github.io
-   ```
-
-### Step 2: Add Your Portfolio Files
-
-1. **Copy all portfolio files to the repository**
-   ```bash
-   # Copy index.html, styles.css, script.js to the repository folder
-   ```
-
-2. **Customize your content** (See customization section below)
-
-### Step 3: Push to GitHub
-
-```bash
-git add .
-git commit -m "Initial portfolio deployment"
-git push origin main
-```
-
-### Step 4: Enable GitHub Pages
-
-1. Go to your repository on GitHub
-2. Click **Settings** → **Pages**
-3. Under **Source**, select **main** branch
-4. Click **Save**
-5. Your site will be live at: `https://<your-username>.github.io`
-
-**🎉 Done! Your portfolio is now live!**
 
 ## 🎨 Customization Guide
 
 ### 1. Personal Information
 
-**Update the following in `index.html`:**
+**Update in `index.html`:**
 
-```html
-<!-- Hero Section -->
-<h1 class="hero-title">Your Name</h1>
-<h2 class="hero-subtitle">Your Title</h2>
-<p class="hero-description">Your description...</p>
+- Line ~50-60: Change name and title in hero section
+- Line ~70-75: Update social media links (GitHub, LinkedIn, Twitter, Email)
+- Line ~100-120: Modify about section text with your details
+- Line ~500-520: Update contact information (email, phone, location)
 
-<!-- About Section -->
-<p class="about-intro">Your introduction...</p>
+**Update in `projects.html`:**
 
-<!-- Contact Section -->
-<p>Your Location</p>
-<p>your.email@example.com</p>
-```
+- Replace project details with your actual projects
+- Add your project screenshots
+- Update technology stacks
+- Modify achievements and metrics
 
-### 2. Projects
+**Update in `blog.html`:**
 
-**Add/Edit projects in the Featured Projects section:**
+- Add your blog posts
+- Update categories
+- Change featured images
 
-```html
-<div class="project-card featured">
-    <div class="project-badge">Featured</div>
-    <div class="project-content">
-        <h3 class="project-title">Project Name</h3>
-        <p class="project-description">Description...</p>
-        <!-- Add your project details -->
-    </div>
-</div>
-```
+### 2. Colors & Branding
 
-### 3. Skills
-
-**Update skill levels in the Skills section:**
-
-```html
-<div class="skill-item">
-    <span class="skill-name">Your Skill</span>
-    <div class="skill-bar">
-        <div class="skill-progress" style="width: 95%"></div>
-    </div>
-</div>
-```
-
-### 4. Social Links
-
-**Update social media links in the footer:**
-
-```html
-<a href="https://github.com/yourusername" target="_blank">GitHub</a>
-<a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
-<a href="mailto:your.email@example.com">Email</a>
-```
-
-### 5. Color Scheme
-
-**Customize colors in `styles.css` (CSS Variables):**
+**In `styles.css` (lines 6-20):**
 
 ```css
 :root {
-    --accent-primary: #6366f1;      /* Primary accent color */
-    --accent-secondary: #8b5cf6;    /* Secondary accent color */
-    /* Modify other colors as needed */
+    --primary-color: #6366f1;      /* Main brand color */
+    --primary-dark: #4f46e5;       /* Darker variant */
+    --secondary-color: #10b981;    /* Success/accent color */
+    --accent-color: #f59e0b;       /* Warning/highlight color */
 }
 ```
 
-### 6. Contact Form
+Change these to match your personal brand!
 
-**To make the contact form functional, integrate with:**
+### 3. Images
 
-- **EmailJS** - [emailjs.com](https://www.emailjs.com/) (Free tier available)
-- **Formspree** - [formspree.io](https://formspree.io/) (Free tier available)
-- **Your own backend API**
+Create an `assets` folder and add:
 
-**Example EmailJS integration in `script.js`:**
+1. **profile.jpg** - Your professional photo (square, min 500x500px)
+2. **resume.pdf** - Your CV/Resume
+3. **Project images** in `assets/projects/`
+4. **Screenshots** in `assets/screenshots/`
+5. **Blog images** in `assets/blog/`
 
-```javascript
-// Uncomment and configure in script.js
-emailjs.send('your_service_id', 'your_template_id', formData)
-    .then(() => {
-        alert('Message sent successfully!');
-    });
+### 4. Social Media Links
+
+Update all occurrences of:
+- `https://github.com/yourusername` → Your GitHub
+- `https://linkedin.com/in/yourusername` → Your LinkedIn
+- `https://twitter.com/yourusername` → Your Twitter
+- `your.email@example.com` → Your email
+- `+91 98765 43210` → Your phone
+
+### 5. Google Fonts (Optional)
+
+Add this in the `<head>` section if you want custom fonts:
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 ```
 
-## 📱 Responsive Breakpoints
+## 🚀 Deployment
 
-- **Desktop**: > 968px
-- **Tablet**: 768px - 968px
-- **Mobile**: < 768px
-- **Small Mobile**: < 480px
+### Option 1: GitHub Pages (Free)
 
-## 🎯 Performance Tips
+1. Create a new repository on GitHub
+2. Push all files to the repository
+3. Go to Settings → Pages
+4. Select main branch and root folder
+5. Save and wait for deployment
+6. Your site will be live at `https://yourusername.github.io/repo-name`
 
-1. **Optimize Images** (when you add them)
-   - Use WebP format
-   - Compress images with TinyPNG
-   - Implement lazy loading (already included in script.js)
+### Option 2: Netlify (Free)
 
-2. **Minify Files for Production**
-   ```bash
-   # Use online tools or:
-   npm install -g minify
-   minify index.html > index.min.html
-   minify styles.css > styles.min.css
-   minify script.js > script.min.js
-   ```
+1. Create account on [Netlify](https://netlify.com)
+2. Drag and drop your portfolio folder
+3. Done! Your site is live
 
-3. **Enable Caching**
-   - GitHub Pages automatically caches static assets
+### Option 3: Vercel (Free)
 
-## 🔧 Local Development
+1. Create account on [Vercel](https://vercel.com)
+2. Import your GitHub repository
+3. Deploy with one click
 
-To preview your portfolio locally:
+### Option 4: Custom Domain
 
-1. **Option 1: Simple HTTP Server (Python)**
-   ```bash
-   # Python 3
-   python -m http.server 8000
-   
-   # Then open: http://localhost:8000
-   ```
+After deploying to any platform above:
+1. Purchase a domain (namecheap.com, godaddy.com, etc.)
+2. Configure DNS settings in platform dashboard
+3. Point your custom domain to the platform
 
-2. **Option 2: Live Server (VS Code Extension)**
-   - Install "Live Server" extension in VS Code
-   - Right-click `index.html` → "Open with Live Server"
+## 📝 Creating New Blog Posts
 
-3. **Option 3: Browser (Limited)**
-   - Simply open `index.html` in your browser
-   - Note: Some features may not work without a server
+1. Copy `blog-post-kmp-code-sharing.html`
+2. Rename to your post slug (e.g., `blog-post-my-new-article.html`)
+3. Update:
+   - Title and meta tags
+   - Post header (title, date, category)
+   - Content inside `.post-content`
+   - Tags in post footer
+   - Related posts section
+4. Add new post card in `blog.html`
 
-## 🌐 Alternative Free Hosting Options
+## 🔧 Features to Add (Optional)
 
-If you don't want to use GitHub Pages:
-
-1. **Netlify** - [netlify.com](https://www.netlify.com/)
-   - Drag & drop deployment
-   - Custom domain support
-   - Automatic HTTPS
-
-2. **Vercel** - [vercel.com](https://vercel.com/)
-   - Git integration
-   - Instant deployments
-   - Edge network
-
-3. **Cloudflare Pages** - [pages.cloudflare.com](https://pages.cloudflare.com/)
-   - Fast global CDN
-   - Unlimited bandwidth
-   - Built-in analytics
-
-## 🐛 Common Issues & Fixes
-
-**Issue**: GitHub Pages not showing updated content
-- **Fix**: Hard refresh (Ctrl+Shift+R) or wait 5-10 minutes for cache to clear
-
-**Issue**: Theme toggle not working
-- **Fix**: Make sure JavaScript is enabled and script.js is loaded
-
-**Issue**: Mobile menu not closing
-- **Fix**: Clear browser cache and reload
-
-**Issue**: Styles not loading
-- **Fix**: Check file paths are correct (case-sensitive on Linux servers)
-
-## 📄 License
-
-This portfolio template is free to use. Feel free to customize it for your own portfolio!
-
-## 🤝 Contributing
-
-Found a bug or have a suggestion? Feel free to:
-1. Open an issue
-2. Submit a pull request
-3. Contact me directly
-
-
-
----
-
-## 📊 Browser Support
-
-| Browser | Version | Support |
-|---------|---------|---------|
-| Chrome | Latest | ✅ Full |
-| Firefox | Latest | ✅ Full |
-| Safari | Latest | ✅ Full |
-| Edge | Latest | ✅ Full |
-| Opera | Latest | ✅ Full |
-
----
-
-## 💡 Future Enhancements
-
-- [ ] Add project screenshots/images
-- [ ] Implement blog section
-- [ ] Add testimonials section
-- [ ] Multi-language support
+- [ ] Dark mode toggle
+- [ ] Google Analytics
+- [ ] Contact form backend (EmailJS, Formspree, or custom)
+- [ ] Blog search functionality
+- [ ] RSS feed for blog
+- [ ] Comments system (Disqus, utterances)
+- [ ] Portfolio filtering by technology
+- [ ] Loading animations
 - [ ] Progressive Web App (PWA)
-- [ ] Analytics integration
-- [ ] Dark mode auto-detect
 
----
+## 📱 Testing Checklist
+
+- [ ] Test on Chrome, Firefox, Safari, Edge
+- [ ] Test on mobile devices (iOS, Android)
+- [ ] Check responsive breakpoints (480px, 768px, 1024px, 1440px)
+- [ ] Verify all links work
+- [ ] Test contact form
+- [ ] Check image loading
+- [ ] Validate HTML (validator.w3.org)
+- [ ] Check accessibility (WAVE, Lighthouse)
+- [ ] Test page load speed (PageSpeed Insights)
+
+## 🎯 SEO Checklist
+
+- [ ] Add meta descriptions to all pages
+- [ ] Create sitemap.xml
+- [ ] Add robots.txt
+- [ ] Set up Google Search Console
+- [ ] Add Open Graph tags for social sharing
+- [ ] Optimize images (compress, add alt text)
+- [ ] Add schema.org structured data
+- [ ] Submit to search engines
+
+## 💡 Tips
+
+1. **Keep it Updated**: Regular updates show you're active
+2. **Write Blog Posts**: Demonstrates expertise and improves SEO
+3. **Add Real Projects**: Quality > Quantity
+4. **Optimize Images**: Compress before uploading (TinyPNG, Squoosh)
+5. **Mobile First**: Most visitors will be on mobile
+6. **Fast Loading**: Keep page size under 3MB
+7. **Analytics**: Add Google Analytics to track visitors
+
+## 🐛 Common Issues
+
+**Images not showing:**
+- Check file paths are correct
+- Ensure images are in the assets folder
+- File names are case-sensitive
+
+**Styles not applying:**
+- Verify styles.css is in the same directory
+- Check for typos in class names
+- Clear browser cache
+
+**Mobile menu not working:**
+- Ensure script.js is loaded
+- Check browser console for errors
+
+## 📧 Support
+
+If you have questions or need help:
+- Email: your.email@example.com
+- LinkedIn: [Your Profile](https://linkedin.com/in/yourusername)
+- GitHub: [Your Profile](https://github.com/yourusername)
 
 ## 📄 License
 
-This portfolio template is **free to use** under the MIT License.  
-Feel free to customize it for your own portfolio!
+This portfolio template is free to use for personal projects. Attribution appreciated but not required.
+
+## 🙏 Credits
+
+- Icons: [Font Awesome](https://fontawesome.com)
+- Fonts: [Google Fonts](https://fonts.google.com)
+- Code Highlighting: [Prism.js](https://prismjs.com)
 
 ---
 
-## 🤝 Contributing
+**Built with ❤️ by Ashutosh** | Mobile Application Developer specializing in Kotlin Multiplatform
 
-Contributions are welcome! Here's how:
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
-## 📞 Contact & Support
-
-<div align="center">
-
-**Ashutosh Gupta**
-
-[![Email](https://img.shields.io/badge/Email-ashutoshg780%40outlook.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ashutoshg780@outlook.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-ashutoshg780-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ashutoshg780)
-[![GitHub](https://img.shields.io/badge/GitHub-ashutoshg780-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ashutoshg780)
-
-</div>
-
----
-
-## ⭐ Show Your Support
-
-If you found this portfolio template helpful, please consider:
-
-- ⭐ Starring this repository
-- 🍴 Forking for your own use
-- 📢 Sharing with others
-- 💬 Providing feedback
-
----
-
-<div align="center">
-
-**Built with ❤️ by Ashutosh Gupta**
-
-![Made with Love](https://img.shields.io/badge/Made%20with-❤️-red?style=for-the-badge)
-![Open Source](https://img.shields.io/badge/Open%20Source-Yes-brightgreen?style=for-the-badge)
-
-*Last Updated: January 2025*
-
-</div>
+Last Updated: January 2025

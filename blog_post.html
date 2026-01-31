@@ -1,0 +1,432 @@
+blog_post.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how to achieve 85% code sharing with Kotlin Multiplatform by Ashutosh">
+    <title>Achieving 85% Code Sharing with Kotlin Multiplatform - Ashutosh</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html">Ashutosh<span class="dot">.</span></a>
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Blog Post -->
+    <article class="blog-post">
+        <div class="container">
+            <!-- Post Header -->
+            <header class="post-header">
+                <div class="post-meta">
+                    <span class="post-category">Kotlin Multiplatform</span>
+                    <span><i class="fas fa-calendar"></i> January 15, 2025</span>
+                    <span><i class="fas fa-clock"></i> 8 min read</span>
+                </div>
+                <h1>Achieving 85% Code Sharing with Kotlin Multiplatform</h1>
+                <p class="post-intro">
+                    How I built EVA2Z Connect with maximum code reusability across Android and iOS
+                </p>
+                <div class="author-info">
+                    <img src="assets/profile.jpg" alt="Ashutosh">
+                    <div>
+                        <h4>Ashutosh</h4>
+                        <p>Mobile Application Developer</p>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Featured Image -->
+            <div class="post-featured-image">
+                <img src="assets/blog/kmp-code-sharing-featured.jpg" alt="Kotlin Multiplatform Code Sharing">
+            </div>
+
+            <!-- Post Content -->
+            <div class="post-content">
+                <h2>The Challenge</h2>
+                <p>
+                    When I started working on EVA2Z Connect, a GPS tracking application for electric vehicles, 
+                    the client needed both Android and iOS versions. The traditional approach would have been to 
+                    build two separate native apps, duplicating business logic, networking code, and data models.
+                </p>
+                <p>
+                    Instead, I chose <strong>Kotlin Multiplatform (KMP)</strong> to maximize code sharing while 
+                    still delivering native user experiences on both platforms.
+                </p>
+
+                <div class="info-box">
+                    <i class="fas fa-lightbulb"></i>
+                    <div>
+                        <h4>Why KMP?</h4>
+                        <p>
+                            Kotlin Multiplatform allows you to write shared business logic once and use it across 
+                            platforms, while keeping UI layer native for the best user experience.
+                        </p>
+                    </div>
+                </div>
+
+                <h2>Architecture Overview</h2>
+                <p>
+                    The key to achieving 85% code sharing was careful architectural planning. Here's how I 
+                    structured the project:
+                </p>
+
+                <h3>1. Shared Module (85% of code)</h3>
+                <ul>
+                    <li><strong>Business Logic:</strong> All domain models, use cases, and business rules</li>
+                    <li><strong>Networking:</strong> Ktor client for API calls</li>
+                    <li><strong>Data Layer:</strong> SQLDelight for local database</li>
+                    <li><strong>Repository Pattern:</strong> Data sources and repositories</li>
+                    <li><strong>ViewModels:</strong> Shared ViewModels using Flow and StateFlow</li>
+                    <li><strong>Utilities:</strong> Date/time formatting, validators, extensions</li>
+                </ul>
+
+                <h3>2. Platform-Specific Code (15%)</h3>
+                <ul>
+                    <li><strong>Android:</strong> Jetpack Compose UI, platform-specific services</li>
+                    <li><strong>iOS:</strong> SwiftUI interfaces, iOS-specific integrations</li>
+                </ul>
+
+                <h2>Implementation Details</h2>
+
+                <h3>Shared Networking with Ktor</h3>
+                <p>
+                    All API calls are handled in the shared module using Ktor. Here's an example of how I 
+                    implemented a generic API client:
+                </p>
+
+<pre><code class="language-kotlin">// commonMain/kotlin/network/ApiClient.kt
+class ApiClient(private val httpClient: HttpClient) {
+    
+    suspend inline fun &lt;reified T&gt; get(
+        endpoint: String,
+        params: Map&lt;String, String&gt; = emptyMap()
+    ): Result&lt;T&gt; = withContext(Dispatchers.IO) {
+        try {
+            val response = httpClient.get(endpoint) {
+                params.forEach { (key, value) ->
+                    parameter(key, value)
+                }
+            }
+            Result.success(response.body&lt;T&gt;())
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
+    
+    suspend inline fun &lt;reified T, reified R&gt; post(
+        endpoint: String,
+        body: T
+    ): Result&lt;R&gt; = withContext(Dispatchers.IO) {
+        try {
+            val response = httpClient.post(endpoint) {
+                contentType(ContentType.Application.Json)
+                setBody(body)
+            }
+            Result.success(response.body&lt;R&gt;())
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
+}</code></pre>
+
+                <h3>Shared ViewModels with StateFlow</h3>
+                <p>
+                    ViewModels in the shared module use Kotlin Flow and StateFlow for reactive state management:
+                </p>
+
+<pre><code class="language-kotlin">// commonMain/kotlin/viewmodels/VehicleViewModel.kt
+class VehicleViewModel(
+    private val vehicleRepository: VehicleRepository
+) : ViewModel() {
+    
+    private val _uiState = MutableStateFlow&lt;VehicleUiState&gt;(VehicleUiState.Loading)
+    val uiState: StateFlow&lt;VehicleUiState&gt; = _uiState.asStateFlow()
+    
+    fun loadVehicles() {
+        viewModelScope.launch {
+            _uiState.value = VehicleUiState.Loading
+            
+            vehicleRepository.getVehicles()
+                .onSuccess { vehicles ->
+                    _uiState.value = VehicleUiState.Success(vehicles)
+                }
+                .onFailure { error ->
+                    _uiState.value = VehicleUiState.Error(error.message)
+                }
+        }
+    }
+}
+
+sealed class VehicleUiState {
+    object Loading : VehicleUiState()
+    data class Success(val vehicles: List&lt;Vehicle&gt;) : VehicleUiState()
+    data class Error(val message: String?) : VehicleUiState()
+}</code></pre>
+
+                <h3>Platform-Specific Implementations</h3>
+                <p>
+                    For platform-specific features, I used the <code>expect/actual</code> pattern:
+                </p>
+
+<pre><code class="language-kotlin">// commonMain/kotlin/platform/LocationService.kt
+expect class LocationService {
+    fun startTracking()
+    fun stopTracking()
+    fun getCurrentLocation(): Location?
+}
+
+// androidMain/kotlin/platform/LocationService.kt
+actual class LocationService(private val context: Context) {
+    private val fusedLocationClient = LocationServices
+        .getFusedLocationProviderClient(context)
+    
+    actual fun startTracking() {
+        // Android-specific location tracking
+    }
+    
+    actual fun stopTracking() {
+        // Stop tracking
+    }
+    
+    actual fun getCurrentLocation(): Location? {
+        // Get current location
+    }
+}
+
+// iosMain/kotlin/platform/LocationService.kt
+actual class LocationService {
+    private val locationManager = CLLocationManager()
+    
+    actual fun startTracking() {
+        // iOS-specific location tracking
+    }
+    
+    actual fun stopTracking() {
+        // Stop tracking
+    }
+    
+    actual fun getCurrentLocation(): Location? {
+        // Get current location
+    }
+}</code></pre>
+
+                <h2>Results & Benefits</h2>
+
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>85%</h3>
+                        <p>Code Sharing</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>40%</h3>
+                        <p>Faster Development</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>50%</h3>
+                        <p>Reduced Bugs</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>60%</h3>
+                        <p>Less Maintenance</p>
+                    </div>
+                </div>
+
+                <h3>Key Benefits Achieved:</h3>
+                <ul>
+                    <li><strong>Faster Development:</strong> 40% reduction in development time compared to building two native apps</li>
+                    <li><strong>Single Source of Truth:</strong> Business logic lives in one place, reducing bugs and inconsistencies</li>
+                    <li><strong>Native Performance:</strong> Both platforms still feel 100% native to users</li>
+                    <li><strong>Easier Maintenance:</strong> Bug fixes and features only need to be implemented once</li>
+                    <li><strong>Type Safety:</strong> Full compile-time type checking across platforms</li>
+                </ul>
+
+                <h2>Challenges & Solutions</h2>
+
+                <h3>Challenge 1: Platform-Specific Dependencies</h3>
+                <p>
+                    <strong>Problem:</strong> Some libraries aren't available for both platforms.
+                </p>
+                <p>
+                    <strong>Solution:</strong> Used the <code>expect/actual</code> pattern to create abstractions 
+                    and platform-specific implementations.
+                </p>
+
+                <h3>Challenge 2: UI Differences</h3>
+                <p>
+                    <strong>Problem:</strong> Android and iOS have different design guidelines.
+                </p>
+                <p>
+                    <strong>Solution:</strong> Kept UI layer completely platform-specific using Jetpack Compose 
+                    for Android and SwiftUI for iOS, while sharing ViewModels.
+                </p>
+
+                <h3>Challenge 3: Debugging</h3>
+                <p>
+                    <strong>Problem:</strong> Debugging shared code can be tricky.
+                </p>
+                <p>
+                    <strong>Solution:</strong> Comprehensive unit tests for shared module, used expect/actual 
+                    logging for platform-specific debugging.
+                </p>
+
+                <h2>Best Practices</h2>
+
+                <div class="tips-box">
+                    <h4><i class="fas fa-check-circle"></i> Tips for KMP Success</h4>
+                    <ol>
+                        <li><strong>Start with the shared module:</strong> Define your data models and business logic first</li>
+                        <li><strong>Use dependency injection:</strong> Makes testing easier and code more modular</li>
+                        <li><strong>Keep UI platform-specific:</strong> Don't try to share UI code unless absolutely necessary</li>
+                        <li><strong>Write comprehensive tests:</strong> Unit test your shared code extensively</li>
+                        <li><strong>Document expect/actual:</strong> Make it clear what platform-specific code does</li>
+                        <li><strong>Use Kotlin Flow:</strong> Perfect for reactive programming in shared code</li>
+                    </ol>
+                </div>
+
+                <h2>Conclusion</h2>
+                <p>
+                    Kotlin Multiplatform allowed me to build EVA2Z Connect efficiently with 85% code sharing, 
+                    cutting development time by 40% while maintaining native performance and user experience 
+                    on both platforms.
+                </p>
+                <p>
+                    If you're building a mobile app that needs to run on both Android and iOS, KMP is definitely 
+                    worth considering. The initial learning curve pays off in faster development, easier 
+                    maintenance, and fewer bugs.
+                </p>
+
+                <div class="cta-box">
+                    <h4>Want to learn more about Kotlin Multiplatform?</h4>
+                    <p>Check out my other articles or reach out if you have questions!</p>
+                    <a href="index.html#contact" class="btn btn-primary">Get in Touch</a>
+                </div>
+            </div>
+
+            <!-- Post Footer -->
+            <footer class="post-footer">
+                <div class="post-tags">
+                    <h4>Tags:</h4>
+                    <span class="tag">Kotlin Multiplatform</span>
+                    <span class="tag">KMP</span>
+                    <span class="tag">Cross-Platform</span>
+                    <span class="tag">Android</span>
+                    <span class="tag">iOS</span>
+                    <span class="tag">Jetpack Compose</span>
+                    <span class="tag">SwiftUI</span>
+                </div>
+
+                <div class="post-share">
+                    <h4>Share this article:</h4>
+                    <div class="share-buttons">
+                        <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="share-btn linkedin"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="share-btn facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="share-btn copy"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- Author Bio -->
+            <div class="author-bio">
+                <img src="assets/profile.jpg" alt="Ashutosh">
+                <div class="author-bio-content">
+                    <h3>About the Author</h3>
+                    <h4>Ashutosh</h4>
+                    <p>
+                        Mobile Application Developer specializing in Kotlin Multiplatform (KMP) and cross-platform 
+                        development. Previously worked at Evatoz Solutions building GPS tracking and attendance 
+                        management systems.
+                    </p>
+                    <div class="author-social">
+                        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Posts -->
+            <section class="related-posts">
+                <h3>Related Articles</h3>
+                <div class="related-posts-grid">
+                    <article class="related-post-card">
+                        <img src="assets/blog/jetpack-compose.jpg" alt="Jetpack Compose in KMP">
+                        <div class="related-post-content">
+                            <span class="post-category">Kotlin Multiplatform</span>
+                            <h4>Jetpack Compose in KMP: Sharing UI Across Platforms</h4>
+                            <a href="blog-post-jetpack-compose-kmp.html">Read More →</a>
+                        </div>
+                    </article>
+                    <article class="related-post-card">
+                        <img src="assets/blog/phonepe-integration.jpg" alt="PhonePe Integration">
+                        <div class="related-post-content">
+                            <span class="post-category">Kotlin Multiplatform</span>
+                            <h4>Integrating PhonePe Payments in Kotlin Multiplatform</h4>
+                            <a href="blog-post-phonepe-integration.html">Read More →</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Ashutosh<span class="dot">.</span></h3>
+                    <p>Mobile Application Developer specializing in Kotlin Multiplatform</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#skills">Skills</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Me</h4>
+                    <div class="social-icons">
+                        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ashutosh. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-kotlin.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
