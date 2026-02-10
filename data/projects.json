@@ -1,1 +1,154 @@
-projects json 
+{
+  "featured": [
+    {
+      "id": "eva2z-connect",
+      "title": "EVA2Z Connect (CMP Migration)",
+      "category": "Cross-Platform",
+      "tags": ["CMP", "GPS Tracking", "BLE", "Play Store"],
+      "description": "Comprehensive GPS tracking application for electric vehicles rebuilt with Compose Multiplatform architecture, achieving ~85% code sharing between Android and iOS platforms.",
+      "highlights": [
+        { "label": "code sharing", "value": "~85%" },
+        { "label": "smaller APK size", "value": "75%" },
+        { "label": "GPS tracking", "value": "Cross-platform" }
+      ],
+      "tech": ["Compose Multiplatform", "Ktor", "Firebase Analytics", "PhonePe SDK", "Google Maps/MapKit", "FCM", "MVVM"],
+      "playStoreLink": "https://play.google.com/store/apps/details?id=com.developer.ev2z&hl=en-in",
+      "featured": true,
+      "image": "images/projects/eva2z.jpg"
+    },
+    {
+      "id": "fleeta2z",
+      "title": "FleetA2Z",
+      "category": "Android",
+      "tags": ["Android", "XML Layouts", "BLE", "Play Store"],
+      "description": "Built Android fleet management application using traditional XML layouts with sophisticated Bluetooth Low Energy implementation for IoT device connectivity.",
+      "highlights": [
+        { "label": "BLE connectivity", "value": "Multi-device" },
+        { "label": "consumption", "value": "Low power" },
+        { "label": "deployed", "value": "Production" }
+      ],
+      "tech": ["Android SDK", "XML Layouts", "GPS Tracking", "FCM", "MVVM"],
+      "playStoreLink": "https://play.google.com/store/apps/details?id=com.fleeta2z.vehicle",
+      "featured": true,
+      "image": "images/projects/fleeta2z.jpg"
+    },
+    {
+      "id": "ble-kmp",
+      "title": "BLE KMP Application",
+      "category": "Cross-Platform",
+      "tags": ["KMP", "BLE", "IoT"],
+      "description": "Advanced Bluetooth Low Energy application built with Kotlin Multiplatform for seamless device connectivity.",
+      "highlights": [
+        { "label": "connectivity", "value": "Multi-device" },
+        { "label": "consumption", "value": "Low power" },
+        { "label": "connection handling", "value": "Robust" }
+      ],
+      "tech": ["Kotlin Multiplatform", "BLE Protocol", "Coroutines", "MVVM"],
+      "featured": true,
+      "image": "images/projects/ble-kmp.jpg"
+    },
+    {
+      "id": "niharika-attendance",
+      "title": "Niharika Attendance System",
+      "category": "AI/ML",
+      "tags": ["ML Kit", "Face Recognition", "Firebase", "Play Store"],
+      "description": "Production-ready attendance management system with ML-powered face recognition achieving 99.65% accuracy.",
+      "highlights": [
+        { "label": "accuracy", "value": "99.65%" },
+        { "label": "ML Kit implementation", "value": "Free" },
+        { "label": "ready", "value": "Production" }
+      ],
+      "tech": ["Jetpack Compose", "ML Kit", "Firebase", "MVVM", "Firestore"],
+      "playStoreLink": "https://play.google.com/apps/testing/com.tgb.niharikaattendanceenrolment",
+      "featured": true,
+      "image": "images/projects/niharika.jpg"
+    }
+  ],
+  "other": {
+    "kmp": [
+      {
+        "title": "Cross-Platform Navigation System",
+        "description": "Comprehensive navigation implementation for KMP applications with type-safe routing",
+        "tags": ["KMP", "Navigation"]
+      },
+      {
+        "title": "Authentication Flow (KMP)",
+        "description": "Secure multi-platform authentication with biometric support and token management",
+        "tags": ["KMP", "Auth"]
+      },
+      {
+        "title": "Barcode Scanner (KMP)",
+        "description": "Cross-platform camera optimization for barcode scanning with ML Kit integration",
+        "tags": ["KMP", "Camera", "ML"]
+      }
+    ],
+    "android": [
+      {
+        "title": "Niharika ALL For One 1.0",
+        "description": "My first solo Android project during MCA - Intelligent Complaint Management System",
+        "tags": ["Android", "XML Layouts", "Firebase", "Private Internal"]
+      },
+      {
+        "title": "Wholsy",
+        "description": "Private internal application built with traditional Android XML layouts",
+        "tags": ["Android", "XML Layouts", "Activity", "Private Internal"]
+      },
+      {
+        "title": "eDu Solution Assistant",
+        "description": "Student learning Android application with user feedback features",
+        "tags": ["Android", "Student Management"]
+      }
+    ],
+    "firebase": [
+      {
+        "title": "Analytics Dashboard",
+        "description": "Comprehensive Firebase Analytics integration with custom event tracking",
+        "tags": ["Firebase", "Analytics"]
+      },
+      {
+        "title": "Real-time Data Sync",
+        "description": "Firestore-based real-time data synchronization across multiple clients",
+        "tags": ["Firestore", "Real-time"]
+      },
+      {
+        "title": "Cloud Storage Integration",
+        "description": "Efficient file upload/download system with Firebase Storage",
+        "tags": ["Firebase", "Storage"]
+      }
+    ],
+    "payments": [
+      {
+        "title": "PhonePe Integration (KMP)",
+        "description": "Cross-platform payment flow with retry mechanisms for EVA2Z Connect and FleetA2Z",
+        "tags": ["KMP", "PhonePe", "Android", "IOS"]
+      },
+      {
+        "title": "RazorPay Integration (KMP)",
+        "description": "Cross-platform payment flow with cart management for EVA2Z Connect",
+        "tags": ["KMP", "RazorPay", "Android", "IOS"]
+      },
+      {
+        "title": "Payment Gateway Solutions",
+        "description": "Multiple payment gateway integrations with secure transaction handling",
+        "tags": ["Android", "IOS", "Payments"]
+      }
+    ],
+    "web_desktop": [
+      {
+        "title": "Nilkamal Furniture E-Commerce (Laravel)",
+        "description": "Full-stack e-commerce website built with Laravel framework",
+        "tags": ["Laravel", "PHP", "MySQL", "E-Commerce"]
+      },
+      {
+        "title": "Student Management Portal",
+        "description": "Responsive UI/UX design for academic document management",
+        "tags": ["UI/UX", "Frontend"]
+      },
+      {
+        "title": "Padma College of Expertise",
+        "description": "Cross-platform Java/MySQL desktop application for student registration",
+        "tags": ["Java", "MySQL", "Desktop"]
+      }
+    ]
+  }
+}

@@ -10,13 +10,13 @@ portfolio/
 │   ├── styles.css        ← Shared styles
 │   ├── home.css          ← home styles
 │   ├── 404.css           ← 404-specific
-│   ├── projects.css      ← Project-specific
+│   ├── project.css      ← Project-specific
 │   ├── blog_post.css     ← blog_post-specific
 │   └── blog.css          ← Blog-specific
 ├── scripts/
 │   ├── script.js         ← Shared logic
 │   ├── home.js           ← home logic
-│   ├── projects.js       ← Project page logic
+│   ├── project.js       ← Project page logic
 │   ├── blog_post.js      ← blog_post-specific logic
 │   └── blog.js           ← Blog page logic
 ├── components/
@@ -24,7 +24,7 @@ portfolio/
 │   └── footer.html       ← Reusable footer
 ├── data/
 │   ├── projects.json     ← Project data (Model)
-│   └── blogs.json        ← Blog data (Model)
+│   └── blogs.json        ← Blog data (Model)    
 ├── auth/
 │   ├── credentials.js    ← credentials data (google-credentials keys)
 │   └── firebase.json     ← Blog data (firebase.json keys)
@@ -42,3 +42,5 @@ portfolio/
     ├── Premium+.gif
     ├── Profilepicture.jpg
     └── Web_App_Development Using_Apache,_MySQL_and_PHP.jpeg
+
+

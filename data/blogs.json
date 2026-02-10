@@ -1,1 +1,108 @@
-blogs json 
+{
+  "posts": [
+    {
+      "id": "kmp-code-sharing",
+      "title": "Achieving 85% Code Sharing with Kotlin Multiplatform",
+      "category": "Kotlin Multiplatform",
+      "categories": ["kmp"],
+      "excerpt": "Learn how I achieved 85% code sharing between Android and iOS in the EVA2Z Connect app using Kotlin Multiplatform. Discover the architecture patterns, best practices, and challenges I faced along the way.",
+      "author": "Ashutosh Gupta",
+      "date": "January 15, 2025",
+      "readTime": "8 min read",
+      "tags": ["KMP", "Cross-Platform", "Architecture"],
+      "image": "images/blog/kmp-code-sharing.jpg",
+      "url": "blog-post-kmp-code-sharing.html"
+    },
+    {
+      "id": "ml-kit-migration",
+      "title": "Migrating from Cloud to On-Device ML Kit: A Cost Optimization Story",
+      "category": "Tutorial",
+      "categories": ["android", "tutorial"],
+      "excerpt": "How I reduced monthly cloud costs from ₹3,290 to ₹0 while maintaining 99.65% accuracy in face recognition. A complete guide to implementing ML Kit Face Detection for attendance systems.",
+      "author": "Ashutosh Gupta",
+      "date": "January 8, 2025",
+      "readTime": "10 min read",
+      "tags": ["ML Kit", "Face Recognition", "Cost Optimization"],
+      "image": "images/blog/ml-kit-migration.jpg",
+      "url": "blog-post-ml-kit-migration.html"
+    },
+    {
+      "id": "ble-debugging",
+      "title": "Debugging BLE Connection Issues: Auto-Reconnect Pattern",
+      "category": "Tutorial",
+      "categories": ["android", "tutorial"],
+      "excerpt": "Deep dive into Bluetooth Low Energy debugging. Learn how to implement robust auto-reconnect mechanisms with exponential backoff and achieve 95% connection reliability in production.",
+      "author": "Ashutosh Gupta",
+      "date": "December 28, 2024",
+      "readTime": "12 min read",
+      "tags": ["BLE", "Debugging", "Android"],
+      "image": "images/blog/ble-debugging.jpg",
+      "url": "blog-post-ble-debugging.html"
+    },
+    {
+      "id": "jetpack-compose-kmp",
+      "title": "Jetpack Compose in KMP: Sharing UI Across Platforms",
+      "category": "Kotlin Multiplatform",
+      "categories": ["kmp", "tutorial"],
+      "excerpt": "Explore how to leverage Jetpack Compose for building shared UI components in Kotlin Multiplatform projects. Best practices, performance tips, and real-world examples.",
+      "author": "Ashutosh Gupta",
+      "date": "December 20, 2024",
+      "readTime": "7 min read",
+      "tags": ["Jetpack Compose", "KMP", "UI"],
+      "image": "images/blog/jetpack-compose.jpg",
+      "url": "blog-post-jetpack-compose-kmp.html"
+    },
+    {
+      "id": "firebase-analytics",
+      "title": "Implementing Firebase Analytics in Cross-Platform Apps",
+      "category": "Case Study",
+      "categories": ["case-study"],
+      "excerpt": "A practical guide to integrating Firebase Analytics across Android and iOS using Kotlin Multiplatform. Track user behavior, conversion funnels, and custom events with shared logic.",
+      "author": "Ashutosh Gupta",
+      "date": "December 12, 2024",
+      "readTime": "6 min read",
+      "tags": ["Firebase", "Analytics", "KMP"],
+      "image": "images/blog/firebase-analytics.jpg",
+      "url": "blog-post-firebase-analytics.html"
+    },
+    {
+      "id": "google-maps-gps",
+      "title": "Building Real-time GPS Tracking with Google Maps",
+      "category": "Tutorial",
+      "categories": ["android", "tutorial"],
+      "excerpt": "Complete guide to implementing real-time location tracking, geofencing, and auto-zoom features using Google Maps SDK. Includes battery optimization techniques and best practices.",
+      "author": "Ashutosh Gupta",
+      "date": "December 5, 2024",
+      "readTime": "9 min read",
+      "tags": ["Google Maps", "GPS", "Location"],
+      "image": "images/blog/google-maps.jpg",
+      "url": "blog-post-google-maps.html"
+    },
+    {
+      "id": "phonepe-integration",
+      "title": "Integrating PhonePe Payments in Kotlin Multiplatform",
+      "category": "Kotlin Multiplatform",
+      "categories": ["kmp"],
+      "excerpt": "Step-by-step guide to implementing PhonePe payment gateway across Android and iOS platforms using KMP. Covers error handling, transaction verification, and security best practices.",
+      "author": "Ashutosh Gupta",
+      "date": "November 28, 2024",
+      "readTime": "11 min read",
+      "tags": ["PhonePe", "Payments", "KMP"],
+      "image": "images/blog/phonepe-integration.jpg",
+      "url": "blog-post-phonepe-integration.html"
+    },
+    {
+      "id": "play-store-approval",
+      "title": "Navigating Google Play Store Production Approval",
+      "category": "Case Study",
+      "categories": ["android", "case-study"],
+      "excerpt": "My experience getting the Niharika Attendance System approved for production. Learn about common rejection reasons, how to handle sensitive permissions, and tips for a smooth approval process.",
+      "author": "Ashutosh Gupta",
+      "date": "November 20, 2024",
+      "readTime": "8 min read",
+      "tags": ["Play Store", "App Publishing", "Compliance"],
+      "image": "images/blog/play-store-approval.jpg",
+      "url": "blog-post-play-store-approval.html"
+    }
+  ]
+}
