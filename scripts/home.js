@@ -18,32 +18,32 @@ if (heroSection) {
 // Typing Effect for Hero Subtitle
 // =====================
 const heroSubtitle = document.querySelector('.hero-subtitle');
-if (heroSubtitle && heroSubtitle.textContent.includes('Mobile Application Developer')) {
+if (heroSubtitle && heroSubtitle.textContent.includes('Software Developer')) {
     const typingTexts = [
-        'Mobile Application Developer',
+        'Software Developer',
         'Kotlin Multiplatform Expert',
-        'Android Developer',
+        'Full-Stack Web Developer',
         'Cross-Platform Specialist'
     ];
-    
+
     let textIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    
+
     function type() {
         const currentText = typingTexts[textIndex];
-        
+
         if (isDeleting) {
             charIndex--;
         } else {
             charIndex++;
         }
-        
+
         const logoHTML = '<img src="images/fav_icon.png" alt="Logo" class="inline-logo">';
         heroSubtitle.innerHTML = logoHTML + currentText.substring(0, charIndex);
-        
+
         let typeSpeed = isDeleting ? 50 : 100;
-        
+
         if (!isDeleting && charIndex === currentText.length) {
             typeSpeed = 2000;
             isDeleting = true;
@@ -52,17 +52,19 @@ if (heroSubtitle && heroSubtitle.textContent.includes('Mobile Application Develo
             textIndex = (textIndex + 1) % typingTexts.length;
             typeSpeed = 500;
         }
-        
+
         setTimeout(type, typeSpeed);
     }
-    
+
     setTimeout(type, 1000);
 }
 
 // =====================
 // Scroll Reveal Animation
 // =====================
-const revealElements = document.querySelectorAll('.project-card, .skill-category, .timeline-item, .certificate-card');
+const revealElements = document.querySelectorAll(
+    '.project-card, .skill-category, .timeline-item, .certificate-card, .hardware-card'
+);
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
