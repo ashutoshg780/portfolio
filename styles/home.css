@@ -173,14 +173,18 @@
 
 .about-highlights {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(0, 2.1fr);
+    align-items: stretch;
     gap: 32px;
     margin-top: 48px;
 }
 
 .highlight-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
-    padding: 24px;
+    padding: 20px 12px;
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 16px;
@@ -195,13 +199,14 @@
 
 .highlight-number {
     display: block;
-    font-size: 2.5rem;
+    font-size: 1.55rem;
     font-weight: 700;
     background: var(--accent-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: 8px;
+    white-space: nowrap;
 }
 
 .highlight-label {
@@ -213,15 +218,17 @@
 .code-visual {
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    padding: 24px;
+    padding: 20px;
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 16px;
     box-shadow: var(--shadow-sm);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     text-align: left;
+    max-width: 100%;
+    overflow-x: auto;
 }
 
 .code-visual:hover {
@@ -232,7 +239,7 @@
 
 .code-line {
     font-family: 'Courier New', monospace;
-    font-size: 1rem;
+    font-size: 0.72rem;
     margin: 8px 0;
     color: var(--text-primary);
     white-space: nowrap;
@@ -1008,7 +1015,7 @@
 .form-group textarea:focus {
     outline: none;
     border-color: var(--accent-primary);
-    box-shadow: 0 0 0 4px rgba(103, 80, 164, 0.1);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent-primary) 15%, transparent);
     background: var(--card-bg);
 }
 
@@ -1082,6 +1089,14 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .code-visual {
+        grid-column: 1 / -1;
+    }
+
+    .highlight-number {
+        font-size: 2.25rem;
+    }
+
     .skills-grid {
         grid-template-columns: 1fr;
     }
@@ -1144,6 +1159,10 @@
 
     .about-highlights {
         grid-template-columns: 1fr;
+    }
+
+    .highlight-number {
+        font-size: 2.5rem;
     }
 
     .contact-form-container {
@@ -1239,6 +1258,72 @@
     font-weight: 500;
 }
 
+.hardware-more {
+    display: none;
+}
+
+.hardware-card.expanded .hardware-more {
+    display: block;
+}
+
+.hardware-toggle {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 0;
+    background: none;
+    border: none;
+    color: var(--accent-primary);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.hardware-toggle:hover {
+    text-decoration: underline;
+}
+
+.hardware-summary code {
+    font-family: 'Courier New', monospace;
+    background: var(--bg-tertiary);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.875em;
+}
+
+/* =====================
+   Resume Download
+   ===================== */
+.btn-resume {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-resume svg {
+    flex-shrink: 0;
+}
+
+.nav-resume-btn {
+    padding: 8px 20px;
+    background: var(--accent-gradient);
+    color: white !important;
+    border-radius: 100px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-resume-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    color: white !important;
+}
+
 @media (max-width: 768px) {
     .hardware-grid {
         grid-template-columns: 1fr;
@@ -1246,5 +1331,10 @@
 
     .hardware-card {
         padding: 24px;
+    }
+
+    .nav-resume-btn {
+        width: 100%;
+        justify-content: center;
     }
 }

@@ -15,6 +15,33 @@ if (heroSection) {
 }
 
 // =====================
+// Project Card Tilt Effect
+// =====================
+// Ported back from the currently-deployed site's script.js — this mouse-tracking
+// 3D tilt was never carried over when the site was split into per-page scripts.
+const tiltProjectCards = document.querySelectorAll('.project-card');
+
+tiltProjectCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = (y - centerY) / 20;
+        const rotateY = (centerX - x) / 20;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+    });
+});
+
+// =====================
 // Typing Effect for Hero Subtitle
 // =====================
 const heroSubtitle = document.querySelector('.hero-subtitle');
@@ -68,9 +95,17 @@ const revealElements = document.querySelectorAll(
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
+            const el = entry.target;
             setTimeout(() => {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+                // Clear the inline transform/transition once the reveal finishes —
+                // otherwise it permanently outranks the CSS :hover transform (e.g.
+                // .project-card:hover's lift animation), silently disabling it forever.
+                el.addEventListener('transitionend', () => {
+                    el.style.transform = '';
+                    el.style.transition = '';
+                }, { once: true });
             }, index * 100);
             revealObserver.unobserve(entry.target);
         }
@@ -132,6 +167,19 @@ certificateCards.forEach(card => {
 
         detailTitle.textContent = title;
         detailIssuer.textContent = issuer;
+
+        const placeholderSvg = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(
+            '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="240">' +
+            '<rect width="100%" height="100%" fill="#ececf1" rx="12"/>' +
+            '<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" ' +
+            'font-family="Inter, sans-serif" font-size="18" font-style="italic" fill="#79747e">' +
+            'Certificate image not yet added</text></svg>'
+        );
+        detailImage.onerror = () => {
+            detailImage.onerror = null;
+            detailImage.src = placeholderSvg;
+            detailImage.alt = 'Certificate image not yet added';
+        };
         detailImage.src = imagePath;
 
         container.classList.remove('normal-view');
@@ -158,9 +206,23 @@ closeButtons.forEach(btn => {
 });
 
 // =====================
+// Hardware Section — Read More Toggle
+// =====================
+document.querySelectorAll('.hardware-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const card = btn.closest('.hardware-card');
+        const expanded = card.classList.toggle('expanded');
+        btn.setAttribute('aria-expanded', String(expanded));
+        btn.textContent = expanded ? 'Show less ↑' : 'Read the full build story ↓';
+    });
+});
+
+// =====================
 // Firebase & Contact Form
 // =====================
-firebase.initializeApp(firebaseConfig);
+// firebaseConfig is already initialized once in auth/credentials.js —
+// calling initializeApp() again here throws "Firebase App named '[DEFAULT]'
+// already exists" and silently breaks the form below.
 const db = firebase.firestore();
 
 const contactForm = document.getElementById('contactForm');

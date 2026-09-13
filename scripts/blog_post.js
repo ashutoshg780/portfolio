@@ -2,7 +2,7 @@
 // BLOG POST CREATOR WITH AUTHENTICATION
 // ===================================
 
-const auth = firebase.auth();
+// const auth = firebase.auth(); // re-enable when switching back to real Firebase Auth login
 const db = firebase.firestore();
 const storage = firebase.storage();
 
@@ -13,10 +13,61 @@ let uploadedImageURL = '';
 // ===================================
 // AUTHENTICATION
 // ===================================
+// ACTIVE: local-only check against auth/credentials.js (blog_post.username /
+// blog_post.password) — plain text, visible via "View Source". Using this
+// temporarily for local testing. Firestore/Storage writes below run as an
+// unauthenticated client, so publishing only works while your Firestore/
+// Storage security rules allow writes without request.auth.
+//
+// TODO: switch back to real Firebase Auth (block commented out below) before
+// this goes live for real use.
 
 const loginSection = document.getElementById('login-section');
 const blogFormSection = document.getElementById('blog-form-section');
 const loginForm = document.getElementById('login-form');
+
+const LOCAL_SESSION_KEY = 'blogAdminLoggedIn';
+
+// Stay logged in across reloads (until browser storage is cleared)
+if (sessionStorage.getItem(LOCAL_SESSION_KEY) === 'true') {
+    showBlogForm();
+} else {
+    showLoginForm();
+}
+
+// Login form submission — LOCAL CHECK (active)
+if (loginForm) {
+    loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const username = document.getElementById('username').value.trim();
+        const password = document.getElementById('password').value;
+
+        const submitBtn = loginForm.querySelector('button');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<div class="spinner"></div> Logging in...';
+
+        // Simulate the same async feel as the old Firebase call
+        await new Promise(resolve => setTimeout(resolve, 300));
+
+        if (username === blog_post.username && password === blog_post.password) {
+            sessionStorage.setItem(LOCAL_SESSION_KEY, 'true');
+            showSuccess('Login successful!');
+            showBlogForm();
+        } else {
+            showError('Invalid credentials. Please try again.');
+        }
+
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+    });
+}
+
+/* ===================================
+   ORIGINAL FIREBASE AUTH LOGIN (commented out — restore this + delete the
+   local-check block above when switching back to real Firebase Auth)
+   ===================================
 
 // Check if user is already logged in
 auth.onAuthStateChanged((user) => {
@@ -31,18 +82,18 @@ auth.onAuthStateChanged((user) => {
 if (loginForm) {
     loginForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
+
         const username = document.getElementById('username').value.trim();
         const password = document.getElementById('password').value;
-        
+
         // Append @tgbagupta.in to username
         const email = username + '@tgbagupta.in';
-        
+
         const submitBtn = loginForm.querySelector('button');
         const originalText = submitBtn.innerHTML;
         submitBtn.disabled = true;
         submitBtn.innerHTML = '<div class="spinner"></div> Logging in...';
-        
+
         try {
             await auth.signInWithEmailAndPassword(email, password);
             showSuccess('Login successful!');
@@ -56,6 +107,8 @@ if (loginForm) {
         }
     });
 }
+
+*/
 
 function showLoginForm() {
     loginSection.style.display = 'block';

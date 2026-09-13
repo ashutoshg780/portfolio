@@ -16,8 +16,12 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 // Blog Post Configuration
+// WARNING: username/password below are plain text in client-side JS — visible to
+// anyone via "View Source". This is a local-only gate, not real authentication.
 const blog_post = {
-    postcode: 121212  // 6-digit confirmation code
+    postcode: 121212,       // 6-digit confirmation code
+    username: "devashu",
+    password: "ashudev"
 };
 
 console.log('✅ Firebase initialized successfully!');
