@@ -57,6 +57,23 @@ Issues that are known but not yet fixed. Move an entry to `bug_fix.md` once it's
   `scripts/project.js` doesn't have it either. Not fixed yet since it wasn't reported.
 - **Suggested fix:** Port the same `mousemove`/`mouseleave` handler into `scripts/project.js`.
 
+### OPEN-008 — `images/blog/*.jpg` — all 8 files missing
+- **Where:** `data/blogs.json` (every post's `"image"` field), rendered by `scripts/blog.js`
+- **Description:** No `images/blog/` folder exists at all. Every blog post card's featured image
+  404s. A graceful placeholder now covers the visual breakage (see `bug_fix.md` BUG-019), but the
+  real fix is adding the actual 8 images: `kmp-code-sharing.jpg`, `ml-kit-migration.jpg`,
+  `ble-debugging.jpg`, `jetpack-compose.jpg`, `firebase-analytics.jpg`, `google-maps.jpg`,
+  `phonepe-integration.jpg`, `play-store-approval.jpg`.
+
+### OPEN-009 — `project.html`/`blog.html`/`blog_post.html`/`404.html` are orphaned pages
+- **Where:** whole site
+- **Description:** Since the nav was simplified to a single-page anchor-based menu (Blog link
+  removed, Projects now points to `home.html#projects`), these 4 pages are no longer linked from
+  anywhere in the site's own navigation — only reachable by typing the URL directly or via
+  `404.html`'s own "Quick Links" (which still links to `project.html`/`blog.html`). Worth deciding
+  whether to keep maintaining them as real pages, redirect them to the relevant `home.html` anchor,
+  or remove them.
+
 ### OPEN-004 — No automated tests exist
 - **Where:** project-wide
 - **Description:** This is a plain HTML/CSS/JS site with no test runner, no CI, and no automated

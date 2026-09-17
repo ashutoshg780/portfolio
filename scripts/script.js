@@ -48,12 +48,17 @@ const html = document.documentElement;
 const currentTheme = localStorage.getItem('theme') || 'light';
 html.setAttribute('data-theme', currentTheme);
 
-themeToggle.addEventListener('click', () => {
-    const theme = html.getAttribute('data-theme');
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    html.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-});
+// Not every page has the theme-toggle button in its markup — guard so a
+// missing element doesn't throw and silently kill every script below this
+// point (smooth scrolling, back-to-top, etc. all live further down this file).
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const theme = html.getAttribute('data-theme');
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
+}
 
 // =====================
 // Smooth Scrolling

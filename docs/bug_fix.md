@@ -4,6 +4,70 @@ Record of bugs found and fixed, most recent first. For currently open/unfixed is
 
 ---
 
+## 2026-09-17 — Site-wide responsive audit
+
+### BUG-015 — Hamburger menu hidden under the fixed theme-toggle button
+- **Symptom:** On any viewport ≤768px, `.nav-toggle` (hamburger) and `.theme-toggle` (fixed
+  top:24px/right:24px, 56×56px) overlapped by ~16px — the hamburger icon was partly obscured.
+- **Fix:** Added `margin-right: 72px` to `.nav-toggle` in the ≤768px media query, clearing the
+  theme-toggle's footprint (56px + gap).
+- **Files:** `styles/styles.css`
+
+### BUG-016 — That same fix made "Ashutosh Gupta" wrap onto 2 lines on narrow phones
+- **Symptom:** After BUG-015's fix, `.nav-brand` had ~22px less room, and at ≤375px width its
+  content (logo + text + profile photo) no longer fit on one line — "Ashutosh" / "Gupta" wrapped.
+- **Fix:** At ≤480px, hide the small profile-photo thumbnail in the navbar
+  (`.nav-brand img.logo-image:last-of-type { display: none; }`) — it's redundant with the large
+  hero photo right below it — and tightened `.nav-brand` gap slightly. Frees enough width that the
+  name fits on one line again.
+- **Files:** `styles/styles.css`
+
+### BUG-017 — `scripts/script.js` crashes on every page except `home.html`
+- **Symptom:** Only `home.html` has the `<button id="themeToggle">` element in its own markup.
+  `project.html`, `blog.html`, `blog_post.html`, and `404.html` don't — so
+  `themeToggle.addEventListener(...)` threw `TypeError: Cannot read properties of null` on load,
+  which **silently killed every script after that line in the same file** (smooth-scroll anchor
+  links, the back-to-top button, scroll-based navbar shadow, debounced scroll handlers) on all 4
+  of those pages.
+- **Fix:** Guarded the listener with `if (themeToggle) { ... }`. Also added the theme-toggle button
+  markup to all 4 pages (matching `home.html`'s), so dark mode now works consistently everywhere
+  instead of being a home-page-only feature.
+- **Files:** `scripts/script.js`, `project.html`, `blog.html`, `blog_post.html`, `404.html`
+
+### BUG-018 — `project.html`: "Featured" badge overlaps the project title
+- **Symptom:** `.project-badge` is `position: absolute; top:16px; right:16px`. On narrow screens
+  the title wraps to 2 lines and its first line runs directly under the badge — e.g. "EVA2Z Connect
+  (KMP" got covered by the "Featured" pill.
+- **Fix:** At ≤768px, `.project-badge` switches to `position: static; display: inline-block;` so it
+  flows above the title instead of floating over it.
+- **Files:** `styles/project.css`
+
+### BUG-019 — `blog.html`: broken post images collapse and collide with badge/title
+- **Symptom:** All 8 posts in `data/blogs.json` reference `images/blog/*.jpg` — a folder that
+  doesn't exist. The resulting broken `<img>` doesn't respect its CSS `width:100%;height:100%`
+  sizing (a common browser quirk for failed loads), collapsing to ~51px inside its 200px container
+  and visually colliding with the absolutely-positioned category badge and the title below it.
+- **Fix:** Added an inline SVG "Image coming soon" placeholder via `onerror` in `scripts/blog.js`
+  (same pattern as the certificate-image fallback from an earlier session), so the full-height
+  `.blog-image` box renders cleanly regardless. The real fix — adding the actual 8 images — is still
+  open, see `bug.md` OPEN-008.
+- **Files:** `scripts/blog.js`
+
+### BUG-020 — `project.html`: highlight stat text wraps mid-word and overlaps its own label
+- **Symptom:** `.project-highlights` is a fixed 3-column grid inside each project card;
+  `.projects-grid` itself uses `minmax(350px, 1fr)`, so on a 3-cards-per-row desktop layout each
+  highlight column is only ~85-90px wide — too narrow for `.highlight strong` at `1.5rem` bold
+  (e.g. "Multi-device", "Production"), which wrapped awkwardly and visually ran into the label
+  (`.highlight span`) beneath it. Worse on wide desktop than on mobile, since more cards per row
+  means less width per card.
+- **Fix:** Reduced `.highlight strong` to `1.125rem` (from `1.5rem`) with `line-height:1.25` and
+  `overflow-wrap:break-word`, and `.highlight span` to `0.6875rem` with tighter letter-spacing.
+  Wrapping can still occur on very long values, but now reads as a clean 2-line label instead of
+  colliding with adjacent text.
+- **Files:** `styles/project.css`
+
+---
+
 ## 2026-09-13 (round 3)
 
 ### BUG-012 — About-highlights: uneven grid track sizing despite `1fr` units

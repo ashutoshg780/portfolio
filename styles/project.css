@@ -194,17 +194,19 @@
 
 .highlight strong {
     display: block;
-    font-size: 1.5rem;
+    font-size: 1.125rem;
+    line-height: 1.25;
     color: var(--accent-primary);
     margin-bottom: 4px;
     font-weight: 700;
+    overflow-wrap: break-word;
 }
 
 .highlight span {
-    font-size: 0.75rem;
+    font-size: 0.6875rem;
     color: var(--text-secondary);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.2px;
 }
 
 /* Project Tech */
@@ -423,6 +425,14 @@
 }
 
 @media (max-width: 768px) {
+    /* The absolutely-positioned corner badge overlaps the title once it
+       wraps to 2 lines on narrow screens — flow it above the title instead. */
+    .project-badge {
+        position: static;
+        display: inline-block;
+        margin-bottom: 12px;
+    }
+
     .page-header h1 {
         font-size: 2rem;
     }

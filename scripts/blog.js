@@ -4,6 +4,17 @@
 
 let allBlogPosts = [];
 
+// Fallback shown when a post's featured image (images/blog/*) is missing —
+// keeps the fixed-height .blog-image box intact instead of collapsing and
+// colliding with the category badge/title below it.
+const BLOG_IMAGE_FALLBACK = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400">' +
+    '<rect width="100%" height="100%" fill="#ececf1"/>' +
+    '<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" ' +
+    'font-family="Inter, sans-serif" font-size="20" font-style="italic" fill="#79747e">' +
+    'Image coming soon</text></svg>'
+);
+
 // Load blogs from JSON
 async function loadBlogs() {
     try {
@@ -44,7 +55,7 @@ function renderBlogPosts(posts) {
     container.innerHTML = posts.map((post, index) => `
         <article class="blog-card" data-category="${post.categories.join(' ')}" style="animation-delay: ${index * 0.1}s">
             <div class="blog-image">
-                <img src="${escapeHtml(post.image)}" alt="${escapeHtml(post.title)}">
+                <img src="${escapeHtml(post.image)}" alt="${escapeHtml(post.title)}" onerror="this.onerror=null;this.src=BLOG_IMAGE_FALLBACK;">
                 <span class="blog-category">${escapeHtml(post.category)}</span>
             </div>
             <div class="blog-content">

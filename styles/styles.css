@@ -419,6 +419,9 @@ button, a, input, textarea, select {
 
     .nav-toggle {
         display: flex;
+        /* Clears the fixed .theme-toggle button (56px wide, 24px from the right edge)
+           so the hamburger icon doesn't render underneath it. */
+        margin-right: 72px;
     }
 
     .section-title {
@@ -437,5 +440,16 @@ button, a, input, textarea, select {
 
     .btn {
         width: 100%;
+    }
+
+    /* Free up room so "Ashutosh Gupta" doesn't wrap next to the hamburger +
+       fixed theme-toggle button — the small profile photo here is redundant
+       with the large hero photo just below it anyway. */
+    .nav-brand img.logo-image:last-of-type {
+        display: none;
+    }
+
+    .nav-brand {
+        gap: 8px;
     }
 }
