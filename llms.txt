@@ -6,8 +6,8 @@
 - Email: ashutosh@tgbagupta.com
 - GitHub: https://github.com/ashutoshg780
 - LinkedIn: https://www.linkedin.com/in/ashutoshg780
-- Portfolio: https://developerashutoshgupta.web.app/
-- Resume (PDF): https://developerashutoshgupta.web.app/documents/Ashutosh_Gupta_Resume.pdf
+- Portfolio: https://ashutosh.tgbagupta.com/
+- Resume (PDF): https://ashutosh.tgbagupta.com/documents/Ashutosh_Gupta_Resume.pdf
 
 ## Skills
 Kotlin Multiplatform, Compose Multiplatform, Jetpack Compose, Android, Flutter, Angular, NestJS, ASP.NET, Firebase, Bluetooth Low Energy (BLE), ML Kit, REST APIs.
@@ -23,4 +23,4 @@ Kotlin Multiplatform, Compose Multiplatform, Jetpack Compose, Android, Flutter, 
 NIELIT Haridwar certifications: Cyber Security & Ethical Hacking, Web Application Development (Apache, MySQL, PHP), Java Programming & NetBeans IDE, Course on Computer Concepts (CCC); Google Cloud Arcade milestones.
 
 ## Pages
-- [Portfolio home](https://developerashutoshgupta.web.app/): about, skills, experience, projects, certificates, contact
+- [Portfolio home](https://ashutosh.tgbagupta.com/): about, skills, experience, projects, certificates, contact
