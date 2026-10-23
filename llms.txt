@@ -1,0 +1,26 @@
+# Ashutosh Gupta
+
+> Ashutosh Gupta is a Software Developer (Full Stack, Android and Cross-Platform Mobile) specializing in Kotlin Multiplatform (KMP/CMP), Jetpack Compose, Flutter, Angular, NestJS and Firebase. He builds production apps with ~85% shared code across Android and iOS, plus full-stack web/ERP systems. Currently Full Stack Software Developer at Digital Dream Systems. Open to full-time roles and freelance/contract work.
+
+## Contact
+- Email: ashutosh@tgbagupta.com
+- GitHub: https://github.com/ashutoshg780
+- LinkedIn: https://www.linkedin.com/in/ashutoshg780
+- Portfolio: https://developerashutoshgupta.web.app/
+- Resume (PDF): https://developerashutoshgupta.web.app/documents/Ashutosh_Gupta_Resume.pdf
+
+## Skills
+Kotlin Multiplatform, Compose Multiplatform, Jetpack Compose, Android, Flutter, Angular, NestJS, ASP.NET, Firebase, Bluetooth Low Energy (BLE), ML Kit, REST APIs.
+
+## Featured projects
+- EVA2Z Connect (KMP migration)
+- WayGo - Fleet & Transport SaaS
+- Niharika Attendance System
+- Construction Builder Solution
+- iCampus Pro
+
+## Education and certifications
+NIELIT Haridwar certifications: Cyber Security & Ethical Hacking, Web Application Development (Apache, MySQL, PHP), Java Programming & NetBeans IDE, Course on Computer Concepts (CCC); Google Cloud Arcade milestones.
+
+## Pages
+- [Portfolio home](https://developerashutoshgupta.web.app/): about, skills, experience, projects, certificates, contact

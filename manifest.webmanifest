@@ -1,0 +1,21 @@
+{
+  "name": "Ashutosh Gupta | Software Developer",
+  "short_name": "Ashutosh",
+  "description": "Portfolio of Ashutosh Gupta, Kotlin Multiplatform, Android and full-stack developer.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6750a4",
+  "icons": [
+    {
+      "src": "/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/fav_icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
