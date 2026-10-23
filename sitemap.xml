@@ -7,7 +7,4 @@
     <priority>1.0</priority>
     <image:image><image:loc>https://ashutosh.tgbagupta.com/images/Profilepicture.jpg</image:loc></image:image>
   </url>
-  <url>
-    <loc>https://ashutosh.tgbagupta.com/llms.txt</loc>
-  </url>
 </urlset>
